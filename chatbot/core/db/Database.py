@@ -3,15 +3,19 @@ from sqlalchemy.orm import sessionmaker
 from models.Base import Base
 from models.User import User
 from models.BankAccount import BankAccount
-
+from datetime import datetime
 class Database:
     def __init__(self):
-        self.engine = create_engine('sqlite:///example.db', echo=True)
+        self.engine = create_engine('sqlite:///tellerai.db', echo=True)
         Base.metadata.create_all(self.engine)
 
         # Create a session
         SessionLocal = sessionmaker(bind=self.engine)
         self.session = SessionLocal()
+        
+    def __generate_account_number(self):
+        time = datetime.now().strftime("%Y%m%d%H%M%S")
+        return f"{time}{self.session.query(BankAccount).count()+1}"
         
     def addUser(self, name, email, password, secret_question, secret_answer):
         user = User(name=name, email=email, password=password, secret_question=secret_question, secret_answer=secret_answer)
@@ -40,8 +44,12 @@ class Database:
         
     def getUser(self, user_id):
         return self.session.query(User).filter_by(id=user_id).first()
+    
+    def getUserFromEmail(self, email):
+        return self.session.query(User).filter_by(email=email).first()
         
-    def addBankAccount(self, account_number, user_id, balance=0):
+    def addBankAccount(self, user_id, balance=0):
+        account_number = self.__generate_account_number()
         bank_account = BankAccount(account_number=account_number, balance=balance, user_id=user_id)
         self.session.add(bank_account)
         self.session.commit()
@@ -55,5 +63,8 @@ class Database:
         return self.session.query(BankAccount).filter_by(account_number=account_number).first().balance
     
     def getUserFromBankAccount(self, account_number):
-        return self.session.query(User).filter_by(id=self.session.query(BankAccount).filter_by(account_number=account_number).first().user_id).first()      
+        return self.session.query(User).filter_by(id=self.session.query(BankAccount).filter_by(account_number=account_number).first().user_id).first() 
+    
+    def getBankAccount(self, user_id):
+        return self.session.query(BankAccount).filter_by(user_id=user_id).first()     
     

@@ -6,13 +6,18 @@ class Banking:
         self.db = Database()
         
     def withdraw(self, account_number, amount):
-        self.db.updateBalance(account_number, self.db.getBalance(account_number) - amount)
-        text = "Withdrawal successful. Thank you for using our services."
-        return text
+        if amount < self.db.getBalance(account_number):
+            self.db.updateBalance(account_number, self.db.getBalance(account_number) - amount)
+            text = "Withdrawal successful. Total balance: " + str(self.db.getBalance(account_number))
+            return text
+        else:
+            text = "Insufficient balance. Please try again later."
+            return text
         
     def deposit(self, account_number, amount):
+        
         self.db.updateBalance(account_number, self.db.getBalance(account_number) + amount)
-        text = "Deposit successful. Thank you for using our services."
+        text = "Deposit successful. Total balance: " + str(self.db.getBalance(account_number))
         return text
         
     def transfer(self, from_account_number, to_account_number, amount):
