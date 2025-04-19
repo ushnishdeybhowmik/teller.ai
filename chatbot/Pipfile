@@ -54,6 +54,9 @@ wrapt = "==1.17.2"
 gtts = "*"
 sqlalchemy = "*"
 playsound = "*"
+llama-cpp-python = "*"
+streamlit = "*"
+bcrypt = "*"
 
 [dev-packages]
 

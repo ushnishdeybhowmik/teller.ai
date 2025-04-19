@@ -6,10 +6,9 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
-    email = Column(String(120), unique=True, nullable=False)
-    password = Column(String(120), nullable=False)
-    secret_question = Column(String(120), nullable=False)
-    secret_answer = Column(String(120), nullable=False)
+    name = Column(String)
+    account_number = Column(String, unique=True)
+    phone = Column(String, unique=True)
+    password_hash = Column(String)
 
-    bank_account = relationship('BankAccount', back_populates='user', uselist=False)
+    queries = relationship("UserQuery", back_populates="user")

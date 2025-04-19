@@ -1,19 +1,18 @@
 import speech_recognition as sr
 class Transcriber:
     def __init__(self):
-        pass
+        self.__recognizer = sr.Recognizer()
+        self.__mic = sr.Microphone()
     
     def listen(self) -> dict:
-        recognizer: sr.Recognizer = sr.Recognizer()
-        mic: sr.Microphone = sr.Microphone()
         
         try:
-            with mic as source:
-                recognizer.adjust_for_ambient_noise(source, duration=2)
+            with self.__mic as source:
+                self.__recognizer.adjust_for_ambient_noise(source, duration=2)
                 print("Listening...")
-                audio: sr.AudioData = recognizer.listen(source, timeout=10, phrase_time_limit=20)
+                audio: sr.AudioData = self.__recognizer.listen(source, timeout=10, phrase_time_limit=20)
                 print("Recognizing...")
-                text: str = recognizer.recognize_google(audio)
+                text: str = self.__recognizer.recognize_google(audio)
                 return {"text": text, "code": 200}
         except sr.UnknownValueError:
             text: str = "Could not understand audio"

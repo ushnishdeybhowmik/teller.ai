@@ -2,69 +2,42 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.Base import Base
 from models.User import User
-from models.BankAccount import BankAccount
-from datetime import datetime
+from models.UserQuery import UserQuery
+from core.processing.security import hash_password
+import random
 class Database:
     def __init__(self):
-        self.engine = create_engine('sqlite:///tellerai.db', echo=True)
-        Base.metadata.create_all(self.engine)
+        self.__engine = create_engine('sqlite:///tellerai.db', echo=True)
+        Base.metadata.create_all(self.__engine)
 
         # Create a session
-        SessionLocal = sessionmaker(bind=self.engine)
-        self.session = SessionLocal()
-        
-    def __generate_account_number(self):
-        time = datetime.now().strftime("%Y%m%d%H%M%S")
-        return f"{time}{self.session.query(BankAccount).count()+1}"
-        
-    def addUser(self, name, email, password, secret_question, secret_answer):
-        user = User(name=name, email=email, password=password, secret_question=secret_question, secret_answer=secret_answer)
-        self.session.add(user)
-        self.session.commit()
-        
-    def updateUser(self, user_id, name=None, email=None):
-        user = self.session.query(User).filter_by(id=user_id).first()
-        user.name = name if not None else user.name
-        user.email = email if not None else user.email
-        self.session.commit()
-        
-    def verifyUser(self, email, password):
-        return self.session.query(User).filter_by(email=email).first().password == password
+        SessionLocal = sessionmaker(bind=self.__engine)
+        self.__session = SessionLocal()
     
-    def updatePassword(self, email, password):
-        user = self.session.query(User).filter_by(email=email).first()
-        user.password = password
-        self.session.commit()
+    def __generateAccountNumber(self):
+        while True:
+            acc_num = str(random.randint(10**9, 10**10 - 1))  # 10-digit number
+            if not self.__session.query(User).filter_by(account_number=acc_num).first():
+                return acc_num
+    def userExistOrCreate(self, name, phone, password, account_number=0):
+        self.__user = self.__session.query(User).filter_by(account_number=account_number).first()
+        if not self.__user:
+            account_number = self.__generateAccountNumber()
+            hashed_password = hash_password(password)
+            self.__user = User(name=name, account_number=account_number, phone=phone, password_hash=hashed_password)
+            self.__session.add(self.__user)
+            self.__session.commit()
+            self.__user = self.__session.query(User).filter_by(account_number=account_number).first()
+        return self.__user
         
-    def verifySecretAnswer(self, email, secret_answer):
-        return str(self.session.query(User).filter_by(email=email).first().secret_answer).lower().rstrip() == str(secret_answer).lower().rstrip()
-    
-    def getSecretQuestion(self, email):
-        return self.session.query(User).filter_by(email=email).first().secret_question
         
-    def getUser(self, user_id):
-        return self.session.query(User).filter_by(id=user_id).first()
+    def getUser(self, account_number):
+        return self.__session.query(User).filter_by(account_number=account_number).first()
     
-    def getUserFromEmail(self, email):
-        return self.session.query(User).filter_by(email=email).first()
+    def addQuery(self, query, intent):
+        new_query = UserQuery(query=query, intent=intent, user=self.__user)
+        self.__session.add(new_query)
+        self.__session.commit()
         
-    def addBankAccount(self, user_id, balance=0):
-        account_number = self.__generate_account_number()
-        bank_account = BankAccount(account_number=account_number, balance=balance, user_id=user_id)
-        self.session.add(bank_account)
-        self.session.commit()
-        
-    def updateBalance(self, account_number, balance):
-        bank_account = self.session.query(BankAccount).filter_by(account_number=account_number).first()
-        bank_account.balance = balance
-        self.session.commit()
-        
-    def getBalance(self, account_number):
-        return self.session.query(BankAccount).filter_by(account_number=account_number).first().balance
-    
-    def getUserFromBankAccount(self, account_number):
-        return self.session.query(User).filter_by(id=self.session.query(BankAccount).filter_by(account_number=account_number).first().user_id).first() 
-    
-    def getBankAccount(self, user_id):
-        return self.session.query(BankAccount).filter_by(user_id=user_id).first()     
-    
+    def getUserFromPhoneNo(self, phone):
+        return self.__session.query(User).filter_by(phone=phone).first()
