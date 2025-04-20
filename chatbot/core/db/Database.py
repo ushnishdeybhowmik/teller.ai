@@ -13,6 +13,7 @@ class Database:
         # Create a session
         SessionLocal = sessionmaker(bind=self.__engine)
         self.__session = SessionLocal()
+        self.__user = None
     
     def __generateAccountNumber(self):
         while True:
@@ -33,6 +34,9 @@ class Database:
         
     def getUser(self, account_number):
         return self.__session.query(User).filter_by(account_number=account_number).first()
+    
+    def setUser(self, user):
+        self.__user = user
     
     def addQuery(self, query, intent):
         new_query = UserQuery(query=query, intent=intent, user=self.__user)

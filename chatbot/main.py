@@ -1,26 +1,45 @@
 import streamlit as st
 from core.db.Database import Database
-from core.processing.security import verify_password, hash_password
+from core.processing.security import verify_password
 from core.stt.transcriber import Transcriber
-from core.agent.agent import Agent
+from core.agent.agent import Agent, LLM
 import random
 
-# === Session setup ===
+# === Streamlit Page Setup ===
+st.set_page_config(page_title="Teller.ai", page_icon="🏦")
+st.image("assets/teller_logo.png", width=100) 
+st.title("🤖 Teller.ai - Your Secure Banking Assistant")
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="./assets/teller_logo.png" width="120"/>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# === Session Setup ===
 if "user" not in st.session_state:
     st.session_state.user = None
+if "welcome_spoken" not in st.session_state:
+    st.session_state.welcome_spoken = False
+if "agent_model" not in st.session_state:
+    st.session_state.agent_model = LLM.MISTRAL
+if "agent" not in st.session_state:
+    st.session_state.agent = None
+if "loaded_model" not in st.session_state:
+    st.session_state.loaded_model = None
+if "user_query" not in st.session_state:
+    st.session_state.user_query = ""
 
 # === Core Setup ===
-st.set_page_config(page_title="BankBot", page_icon="🏦")
-st.title("🏦 BankBot - Secure Banking Assistant")
-
 db = Database()
 transcriber = Transcriber()
-agent = Agent()
 
-# === Helper to generate account number ===
+# === Generate Unique Account Number ===
 def generate_unique_account_number():
     while True:
-        acc_num = str(random.randint(10**9, 10**10 - 1))  # 10-digit number
+        acc_num = str(random.randint(10**9, 10**10 - 1))
         if not db.getUser(acc_num):
             return acc_num
 
@@ -28,46 +47,81 @@ def generate_unique_account_number():
 if st.session_state.user:
     user = st.session_state.user
     st.success(f"Welcome back, {user.name}!")
-    agent.speak(f"Welcome back, {user.name}!")
-    st.markdown("---")
 
-    # === CHAT INTERFACE ===
+    if not st.session_state.welcome_spoken:
+        try:
+            if st.session_state.agent is None:
+                st.session_state.agent = Agent(model=st.session_state.agent_model)
+                st.session_state.loaded_model = st.session_state.agent_model
+            st.session_state.agent.speak(f"Welcome back, {user.name}!")
+        except RuntimeError:
+            st.warning("🔇 Could not play welcome audio.")
+        st.session_state.welcome_spoken = True
+
+    # === Lazy Agent Load ===
+    if st.session_state.agent is None or st.session_state.agent_model != st.session_state.loaded_model:
+        st.session_state.agent = Agent(model=st.session_state.agent_model)
+        st.session_state.loaded_model = st.session_state.agent_model
+
+    agent = st.session_state.agent
+
+    st.markdown("---")
+    st.subheader("💬 Ask Teller.ai")
+
     query_mode = st.radio("Choose input method:", ["🎤 Voice", "⌨️ Text"])
-    user_query = ""
 
     if query_mode == "🎤 Voice":
-        if st.button("🎙️ Start Listening"):
+        if st.button("🎧 Start Listening"):
             with st.spinner("Listening..."):
-                user_query = transcriber.listen()["text"]
-            st.success(f"You said: {user_query}")
+                try:
+                    result = transcriber.listen()
+                    transcript = result.get("text", "").strip()
+                    if not transcript:
+                        st.warning("🔝 Could not transcribe. Please try again.")
+                        st.stop()
+                    st.session_state.user_query = transcript
+                    st.success(f"You said: {transcript}")
+                except Exception as e:
+                    st.error(f"⚠️ Speech recognition error: {e}")
+                    st.stop()
     else:
-        user_query = st.text_area("Type your query below:")
+        st.session_state.user_query = st.text_area("Type your query below:", value=st.session_state.get("user_query", ""))
 
-    if st.button("💬 Get Response") and user_query.strip():
-        with st.spinner("Thinking..."):
-            intent, response = agent.get_intent_and_response(user_query)
+    if st.button("💬 Get Response") and st.session_state.user_query.strip():
+        with st.spinner("Teller.ai is thinking..."):
+            intent, response = agent.get_intent_and_response(st.session_state.user_query)
+            db.addQuery(st.session_state.user_query, intent)
 
-            # Store in DB
-            db.addQuery(user_query, intent)
-
-        st.subheader("🤖 Response")
+        st.subheader("🤖 Teller.ai Responds")
         st.success(response)
 
         if st.checkbox("🔊 Read aloud"):
-            agent.speak(response)
+            try:
+                agent.speak(response)
+            except RuntimeError:
+                st.warning("🔇 Could not play audio.")
+                st.text_area("Assistant Response", response, height=150)
 
         st.markdown(f"**Intent Detected:** `{intent}`")
 
     # === Logout Option ===
     if st.button("🚪 Logout"):
         st.session_state.user = None
+        st.session_state.welcome_spoken = False
+        st.session_state.user_query = ""
+        st.session_state.agent = None
+        st.session_state.loaded_model = None
         st.rerun()
 
     st.stop()
 
 # === LOGIN / REGISTER ===
-st.header("🔐 Login or Register")
-mode = st.radio("Choose", ["🔐 Login", "🆕 Register"])
+st.header("🔐 Login or Register to Teller.ai")
+mode = st.radio("Choose mode:", ["🔐 Login", "🆕 Register"])
+
+# === Model Selector ===
+model_choice = st.selectbox("Select AI model for Teller.ai:", ["Mistral", "TinyLlama"])
+st.session_state.agent_model = LLM.MISTRAL if model_choice == "Mistral" else LLM.TINYLLAMA
 
 with st.form("auth_form"):
     if mode == "🆕 Register":
@@ -93,8 +147,10 @@ if mode == "🆕 Register":
     account_number = generate_unique_account_number()
     new_user = db.userExistOrCreate(name, phone, password, account_number=account_number)
 
-    st.success("Registration successful! Your Account Number is: " + new_user.account_number)
+    st.success("🎉 Registration successful!")
+    st.info(f"🪪 Your Account Number is: `{new_user.account_number}`")
     st.session_state.user = new_user
+    st.session_state.welcome_spoken = False
     st.rerun()
 
 # === LOGIN ===
@@ -104,4 +160,6 @@ if not user or not verify_password(password, user.password_hash):
     st.stop()
 
 st.session_state.user = user
+db.setUser(user)
+st.session_state.welcome_spoken = False
 st.rerun()
