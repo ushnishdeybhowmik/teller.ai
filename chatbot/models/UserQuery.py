@@ -6,8 +6,10 @@ class UserQuery(Base):
     __tablename__ = 'user_queries'
 
     id = Column(Integer, primary_key=True)
-    query = Column(String)            # 👈 stores the actual user query
-    intent = Column(String)           # 👈 stores extracted intent
-    user_id = Column(Integer, ForeignKey('users.id'))  # 👈 links to User table
+    query = Column(String)
+    intent = Column(String)
+    response = Column(String)            # ✅ New field
+    rating = Column(Integer, nullable=True)  # ✅ New field (nullable)
+    user_id = Column(Integer, ForeignKey('users.id'))
 
-    user = relationship("User", back_populates="queries") 
+    user = relationship("User", back_populates="queries")

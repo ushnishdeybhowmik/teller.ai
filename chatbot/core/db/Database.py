@@ -38,10 +38,17 @@ class Database:
     def setUser(self, user):
         self.__user = user
     
-    def addQuery(self, query, intent):
-        new_query = UserQuery(query=query, intent=intent, user=self.__user)
+    def addQuery(self, query, intent, response):
+        new_query = UserQuery(query=query, intent=intent, response=response, rating=0, user=self.__user)
         self.__session.add(new_query)
         self.__session.commit()
+        return new_query.id  # Return the ID to update rating later
         
     def getUserFromPhoneNo(self, phone):
         return self.__session.query(User).filter_by(phone=phone).first()
+    
+    def updateRating(self, query_id, rating):
+        user_query = self.__session.query(UserQuery).filter_by(id=query_id).first()
+        if user_query:
+            user_query.rating = rating
+            self.__session.commit()

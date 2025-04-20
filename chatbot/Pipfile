@@ -57,6 +57,8 @@ playsound = "*"
 streamlit = "*"
 bcrypt = "*"
 llama-cpp-python = "*"
+dotenv = "*"
+openai = "*"
 
 [dev-packages]
 
