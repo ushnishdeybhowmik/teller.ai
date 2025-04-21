@@ -5,6 +5,7 @@ from models.User import User
 from models.UserQuery import UserQuery
 from core.processing.security import hash_password
 import random
+import datetime
 class Database:
     def __init__(self):
         self.__engine = create_engine('sqlite:///tellerai.db', echo=True)
@@ -25,12 +26,19 @@ class Database:
         if not self.__user:
             account_number = self.__generateAccountNumber()
             hashed_password = hash_password(password)
-            self.__user = User(name=name, account_number=account_number, phone=phone, password_hash=hashed_password)
+            self.__user = User(name=name, account_number=account_number, phone=phone, latitude=0, longitude=0, password_hash=hashed_password)
             self.__session.add(self.__user)
             self.__session.commit()
             self.__user = self.__session.query(User).filter_by(account_number=account_number).first()
         return self.__user
-        
+    
+    def updateLocation(self, latitude, longitude):
+        if self.__user:
+            self.__user.latitude = latitude
+            self.__user.longitude = longitude
+            self.__session.commit()
+            return True
+        return False    
         
     def getUser(self, account_number):
         return self.__session.query(User).filter_by(account_number=account_number).first()
@@ -39,7 +47,8 @@ class Database:
         self.__user = user
     
     def addQuery(self, query, intent, response):
-        new_query = UserQuery(query=query, intent=intent, response=response, rating=0, user=self.__user)
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        new_query = UserQuery(query=query, intent=intent, response=response, timestamp=timestamp, rating=0, user=self.__user)
         self.__session.add(new_query)
         self.__session.commit()
         return new_query.id  # Return the ID to update rating later
@@ -52,3 +61,6 @@ class Database:
         if user_query:
             user_query.rating = rating
             self.__session.commit()
+            
+    def getEngine(self):
+        return self.__engine

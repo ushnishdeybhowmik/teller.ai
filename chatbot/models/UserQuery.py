@@ -9,7 +9,7 @@ class UserQuery(Base):
     query = Column(String)
     intent = Column(String)
     response = Column(String)            # ✅ New field
+    timestamp = Column(String)
     rating = Column(Integer, nullable=True)  # ✅ New field (nullable)
     user_id = Column(Integer, ForeignKey('users.id'))
-
     user = relationship("User", back_populates="queries")

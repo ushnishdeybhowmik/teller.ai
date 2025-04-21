@@ -59,6 +59,9 @@ bcrypt = "*"
 llama-cpp-python = "*"
 dotenv = "*"
 openai = "*"
+geocoder = "*"
+plotly = "*"
+pandas = "*"
 
 [dev-packages]
 
