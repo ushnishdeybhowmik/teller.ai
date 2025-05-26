@@ -8,15 +8,29 @@ import logging
 logger = logging.getLogger(__name__)
 
 class Mistral(BaseLLM):
-    __model = os.path.join(os.getcwd(), "core", "llm", "mistral", "mistral-7b-instruct-v0.2.Q4_K_M.gguf")
-    
     def __init__(self):
         try:
-            self.llm = Llama(model_path=self.__model, 
+            # Try multiple possible model paths
+            model_paths = [
+                os.path.join(os.getcwd(), "core", "llm", "mistral", "mistral-7b-instruct-v0.2.Q4_K_M.gguf"),
+                os.path.join(os.getcwd(), "chatbot", "core", "llm", "mistral", "mistral-7b-instruct-v0.2.Q4_K_M.gguf"),
+                os.path.join(os.path.dirname(__file__), "mistral-7b-instruct-v0.2.Q4_K_M.gguf")
+            ]
+            
+            model_path = None
+            for path in model_paths:
+                if os.path.exists(path):
+                    model_path = path
+                    break
+                    
+            if not model_path:
+                raise FileNotFoundError("Could not find Mistral model file in any of the expected locations")
+                
+            self.llm = Llama(model_path=model_path, 
                            n_ctx=2048, 
                            n_threads=6,
                            n_gpu_layers=20)
-            logger.info("Successfully initialized Mistral model")
+            logger.info(f"Successfully initialized Mistral model from {model_path}")
         except Exception as e:
             logger.error(f"Failed to initialize Mistral model: {e}")
             raise

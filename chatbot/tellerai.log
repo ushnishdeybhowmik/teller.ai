@@ -157,3 +157,1000 @@ WHERE users.phone = ?
 2025-05-26 10:01:46,645 - __main__ - ERROR - Failed to play welcome message: TTS playback failed
 2025-05-26 10:03:26,916 - core.db.Database - INFO - Database initialized successfully
 2025-05-26 10:03:27,615 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:23:20,451 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:23:20,985 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:23:20,986 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:28:47,710 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:28:48,615 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:28:48,616 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:30:35,290 - core.db.Database - ERROR - Failed to initialize database: cannot access local variable 'session' where it is not associated with a value
+2025-05-26 10:30:35,292 - __main__ - ERROR - Failed to initialize core components: cannot access local variable 'session' where it is not associated with a value
+2025-05-26 10:30:41,124 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:30:42,092 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:30:42,094 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:30:49,507 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:30:50,183 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:30:50,184 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:31:23,451 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:31:24,085 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:31:24,086 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:31:24,114 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 10:31:24,114 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:31:34,725 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:31:35,346 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:31:35,348 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:31:35,376 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:31:46,570 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:31:48,046 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:31:48,048 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:31:48,067 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:31:57,121 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:31:57,720 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:31:57,721 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:31:57,740 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:32:06,205 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:32:06,876 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:32:06,878 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:32:06,899 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:32:15,357 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:32:15,988 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:32:15,990 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:32:16,023 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:32:26,114 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:32:27,035 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:32:27,036 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:32:27,062 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:32:27,747 - core.db.Database - INFO - User created successfully: 4114009931
+2025-05-26 10:32:27,957 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:32:28,586 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:32:28,587 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:32:29,396 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model
+2025-05-26 10:32:29,398 - core.agent.agent - INFO - Successfully initialized mistral model
+2025-05-26 10:32:29,399 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 10:32:50,589 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:32:51,218 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:32:51,219 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:32:51,511 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:32:52,162 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:32:52,164 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:33:23,309 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:33:24,086 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:33:24,088 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:33:24,422 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:33:25,212 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:33:25,213 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:33:34,480 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:33:35,144 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:33:35,146 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:33:35,424 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:33:36,170 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:33:36,171 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:34:07,615 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:34:08,221 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:34:08,223 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:34:08,567 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:34:09,353 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:34:09,355 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:36:21,514 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:36:22,220 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:36:22,247 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:36:38,322 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:36:39,055 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:36:39,057 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:36:50,811 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:36:51,448 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:36:51,450 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:36:51,495 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 10:36:51,508 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:36:52,327 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:36:52,879 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:36:52,882 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:36:52,917 - __main__ - ERROR - Failed to initialize agent: Instance <User at 0x1fcbd8e1690> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-05-26 10:37:12,214 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:37:12,847 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:37:12,849 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:43:39,957 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:43:40,633 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:43:40,635 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:43:55,510 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:43:56,199 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:43:56,201 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:43:56,235 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 10:43:56,237 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:43:57,126 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:43:57,733 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:43:57,735 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:43:57,766 - __main__ - ERROR - Failed to initialize agent: Instance <User at 0x1fcc041cc90> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-05-26 10:43:59,434 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model
+2025-05-26 10:43:59,435 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 10:43:59,436 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 10:43:59,437 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 10:43:59,441 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 10:49:18,562 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:49:19,353 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:49:19,354 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:49:23,686 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:49:24,988 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:49:24,990 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:49:28,506 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:49:29,793 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:49:29,898 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:49:33,615 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:49:34,400 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:49:34,401 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:49:48,856 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:49:52,636 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:49:52,638 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:49:52,653 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 10:49:52,654 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:49:53,515 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:49:54,066 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:49:54,067 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:49:54,089 - __main__ - ERROR - Failed to initialize agent: Instance <User at 0x1fcc041ce90> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-05-26 10:49:56,315 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model
+2025-05-26 10:49:56,318 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 10:49:56,320 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 10:49:56,331 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 10:49:56,335 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 10:50:07,521 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:08,180 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:08,182 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:08,532 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:09,108 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:09,110 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:10,857 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 10:50:10,858 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 10:50:10,858 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 10:50:10,859 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 10:50:10,861 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 10:50:18,017 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:18,616 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:18,617 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:18,935 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:19,504 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:19,507 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:19,530 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 10:50:19,533 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 10:50:19,536 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 10:50:40,878 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:41,504 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:41,506 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:41,835 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:42,622 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:42,623 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:42,650 - core.agent.agent - INFO - Using cached gpt model
+2025-05-26 10:50:42,651 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 10:50:42,652 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 10:50:50,895 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:51,634 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:51,635 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:52,074 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:50:52,792 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:50:52,793 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:50:53,459 - core.llm.tinyllama.tinyllama - INFO - Successfully initialized TinyLlama model
+2025-05-26 10:50:53,460 - core.agent.agent - INFO - Cached tinyllama model
+2025-05-26 10:50:53,461 - core.agent.agent - INFO - Successfully initialized and cached tinyllama model
+2025-05-26 10:50:53,462 - core.agent.agent - INFO - Initialized agent with model: tinyllama
+2025-05-26 10:50:53,464 - __main__ - INFO - Successfully initialized tinyllama model
+2025-05-26 10:51:28,310 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:51:29,114 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:51:29,115 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:51:29,447 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:51:30,033 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:51:30,034 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:56:57,847 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 10:56:57,848 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:56:58,533 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:56:58,534 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:57:17,451 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 10:57:17,451 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:57:18,090 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:57:18,092 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:57:18,115 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 10:57:18,116 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:57:18,670 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 10:57:18,865 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 10:57:18,866 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:57:19,420 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:57:19,422 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:57:19,453 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 10:57:21,600 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model
+2025-05-26 10:57:21,601 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 10:57:21,602 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 10:57:21,603 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 10:57:21,608 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 10:57:21,609 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 10:57:21,612 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 10:57:29,029 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 10:57:29,030 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:57:29,661 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:57:29,662 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:57:29,697 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 10:57:30,003 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 10:57:30,005 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:57:30,788 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:57:30,790 - __main__ - INFO - Successfully initialized core components
+2025-05-26 10:57:30,817 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 10:57:30,865 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 12:32:34,631 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:32:34,632 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:32:35,124 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:32:35,125 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:32:35,163 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:37:26,863 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:37:26,863 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:37:27,519 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:37:27,519 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:37:44,218 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:37:44,219 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:37:44,651 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:37:44,651 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:37:44,662 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 12:37:44,662 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 12:37:45,297 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 12:37:45,422 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:37:45,423 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:37:45,894 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:37:45,894 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:37:45,908 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:37:45,916 - __main__ - ERROR - Failed to initialize agent: 'str' object has no attribute 'value'
+2025-05-26 12:37:47,439 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model
+2025-05-26 12:37:47,439 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 12:37:47,439 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 12:37:47,440 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 12:37:47,442 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 12:40:48,056 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:40:48,056 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:40:49,399 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:40:49,400 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:40:49,416 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:40:49,578 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:40:49,579 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:40:50,021 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:40:50,021 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:40:50,034 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:40:50,048 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 12:40:55,195 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:40:55,196 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:40:55,637 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:40:55,638 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:09,721 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:09,722 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:10,233 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:10,233 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:10,250 - __main__ - INFO - Successfully retrieved location: 18.5196, 73.8554
+2025-05-26 12:41:10,251 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 12:41:15,511 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:15,512 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:15,945 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:15,946 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:15,955 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 12:41:16,322 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 12:41:16,468 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:16,468 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:16,942 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:16,942 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:16,954 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:41:16,958 - __main__ - ERROR - Failed to initialize agent: 'str' object has no attribute 'value'
+2025-05-26 12:41:17,902 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model
+2025-05-26 12:41:17,902 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 12:41:17,903 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 12:41:17,903 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 12:41:17,905 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 12:41:25,519 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:25,520 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:26,111 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:26,112 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:26,143 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:41:26,330 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:26,330 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:26,821 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:26,822 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:26,834 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:41:30,048 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:30,049 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:30,506 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:30,507 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:30,519 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:41:30,648 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:41:30,650 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:41:31,312 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:41:31,313 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:41:31,326 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 12:41:31,344 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 12:52:05,769 - core.db.Database - ERROR - Failed to create/update database tables: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:05,770 - core.db.Database - ERROR - Failed to initialize database: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:05,771 - __main__ - ERROR - Failed to initialize core components: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:09,657 - core.db.Database - ERROR - Failed to create/update database tables: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:09,658 - core.db.Database - ERROR - Failed to initialize database: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:09,659 - __main__ - ERROR - Failed to initialize core components: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:12,988 - core.db.Database - ERROR - Failed to create/update database tables: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:12,989 - core.db.Database - ERROR - Failed to initialize database: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:52:12,990 - __main__ - ERROR - Failed to initialize core components: Not an executable object: 'PRAGMA table_info(users)'
+2025-05-26 12:54:40,473 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:54:40,473 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:54:41,087 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:54:41,088 - __main__ - INFO - Successfully initialized core components
+2025-05-26 12:55:19,017 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 12:55:19,018 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 12:55:19,537 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 12:55:19,538 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:01:59,988 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:01:59,989 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:02:00,506 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:02:00,507 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:03:14,929 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:03:14,930 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:03:15,484 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:03:15,485 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:03:19,496 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:03:19,498 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:03:20,004 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:03:20,005 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:30:57,109 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:30:57,110 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:30:59,439 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:30:59,441 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:32:29,174 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:32:29,175 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:32:29,176 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:32:29,176 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:32:29,177 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:32:29,811 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:32:29,812 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:32:29,818 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:32:29,818 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:32:29,819 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:32:30,463 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:32:30,465 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:32:30,466 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:32:30,467 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:32:30,467 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:32:58,641 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:32:58,642 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:32:58,644 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:32:58,644 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:32:58,644 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:32:59,343 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:32:59,344 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:32:59,347 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:32:59,349 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:32:59,349 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:33:14,487 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:33:14,488 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:33:14,490 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:33:14,490 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:33:14,491 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:33:19,346 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:33:19,347 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:33:19,349 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:33:19,350 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:33:19,350 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:33:20,010 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:33:20,010 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:33:20,013 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:33:20,013 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:33:20,014 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:33:20,636 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:33:20,637 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:33:20,639 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:33:20,639 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:33:20,640 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:33:23,163 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:33:23,163 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:33:23,165 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:33:23,166 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:33:23,166 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:33:23,828 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:33:23,829 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:33:23,833 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:33:23,833 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:33:23,834 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:35:19,932 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:35:19,932 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:35:19,935 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:35:19,936 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:35:19,936 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:37:56,430 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:37:56,535 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:37:56,537 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:37:56,537 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:37:56,537 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:38:17,718 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:38:17,719 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:38:17,720 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:38:17,721 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:38:17,721 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:38:17,730 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 13:38:18,097 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:38:18,650 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:38:18,651 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:40:53,539 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:40:53,539 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:40:53,540 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:40:54,052 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:40:54,053 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:40:54,501 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:40:54,502 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:40:54,504 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:40:54,505 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:40:54,505 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:41:13,681 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:41:13,682 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:41:13,683 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:41:14,225 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:41:14,225 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:41:14,658 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:41:14,659 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:41:14,661 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:41:14,662 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:41:14,662 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:41:14,674 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 13:41:15,051 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:41:15,158 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:41:15,159 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:41:15,159 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:41:15,585 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:41:15,586 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:41:16,026 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:41:16,027 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:41:16,035 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 13:41:18,465 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 13:41:18,465 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 13:41:18,466 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 13:41:18,466 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:41:18,467 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:41:18,475 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:41:18,475 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:41:18,476 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:41:18,499 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:41:18,516 - __main__ - ERROR - Error in main content area: There are multiple `radio` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `radio` element.
+2025-05-26 13:41:18,523 - __main__ - INFO - Session state reset successfully
+2025-05-26 13:41:18,720 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:41:18,721 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:41:18,722 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:41:19,222 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:41:19,223 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:41:19,682 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:41:19,683 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:41:19,684 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:41:19,684 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:41:19,685 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:00,145 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:00,145 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:00,145 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:00,656 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:00,657 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:01,147 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:01,149 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:01,160 - __main__ - ERROR - Failed to clear notifications: 'NoneType' object is not iterable
+2025-05-26 13:43:13,960 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:13,961 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:13,961 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:14,556 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:14,557 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:15,027 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:15,029 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:15,044 - __main__ - ERROR - Login attempt handling failed: '>=' not supported between instances of 'NoneType' and 'int'
+2025-05-26 13:43:23,086 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:23,087 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:23,087 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:23,582 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:23,583 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:24,020 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:24,021 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:24,034 - __main__ - ERROR - Login attempt handling failed: '>=' not supported between instances of 'NoneType' and 'int'
+2025-05-26 13:43:26,570 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:26,571 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:26,572 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:27,082 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:27,083 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:27,574 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:27,576 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:27,587 - __main__ - ERROR - Login attempt handling failed: '>=' not supported between instances of 'NoneType' and 'int'
+2025-05-26 13:43:35,743 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:35,746 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:35,747 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:36,201 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:36,202 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:36,648 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:36,649 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:51,341 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:51,344 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:51,345 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:51,817 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:51,817 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:52,299 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:52,300 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:52,310 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 13:43:52,682 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:43:52,684 - __main__ - INFO - Notification added: success - Login successful!
+2025-05-26 13:43:52,792 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:52,792 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:52,792 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:53,233 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:53,234 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:53,700 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:53,701 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:53,708 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 13:43:55,699 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 13:43:55,699 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 13:43:55,700 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 13:43:55,700 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:43:55,702 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:43:55,720 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:43:55,729 - __main__ - ERROR - Error in main content area: There are multiple `radio` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `radio` element.
+2025-05-26 13:43:55,734 - __main__ - INFO - Session state reset successfully
+2025-05-26 13:43:55,921 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:43:55,926 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:43:55,927 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:43:56,423 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:56,424 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:43:56,863 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:43:56,865 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:44:05,125 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:44:05,126 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:44:05,127 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:44:05,592 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:44:05,592 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:44:06,022 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:44:06,023 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:44:06,033 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 13:44:06,411 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:44:06,412 - __main__ - INFO - Notification added: success - Login successful!
+2025-05-26 13:44:06,525 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:44:06,525 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:44:06,527 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:44:06,995 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:44:06,995 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:44:07,441 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:44:07,442 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:44:07,449 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 13:44:07,457 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 13:44:07,458 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:44:07,460 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:44:07,495 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:44:07,511 - __main__ - ERROR - Error in main content area: There are multiple `radio` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `radio` element.
+2025-05-26 13:44:07,516 - __main__ - INFO - Session state reset successfully
+2025-05-26 13:44:07,701 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:44:07,701 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:44:07,702 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:44:08,190 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:44:08,191 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:44:08,627 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:44:08,629 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:29,223 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:46:29,223 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:46:29,223 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:46:29,736 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:46:29,737 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:30,314 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:46:30,315 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:45,017 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:46:45,017 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:46:45,017 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:46:45,018 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:45,469 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:46:45,470 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:45,842 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:46:45,843 - __main__ - INFO - Notification added: success - Login successful!
+2025-05-26 13:46:45,994 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:46:45,994 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:46:45,995 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:46:45,996 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:46,485 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:46:46,486 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:46,491 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 13:46:52,094 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 13:46:52,095 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 13:46:52,095 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 13:46:52,095 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:46:52,096 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:46:52,123 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:46:52,139 - __main__ - ERROR - Error in main content area: There are multiple `radio` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `radio` element.
+2025-05-26 13:46:52,145 - __main__ - INFO - Session state reset successfully
+2025-05-26 13:46:52,364 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:46:52,365 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:46:52,366 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:46:52,367 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:46:52,909 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:46:52,909 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:15,904 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:47:15,905 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:47:15,906 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:47:15,907 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:16,445 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:47:16,446 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:16,831 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:47:16,832 - __main__ - INFO - Notification added: success - Login successful!
+2025-05-26 13:47:16,965 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:47:16,965 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:47:16,965 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:47:16,966 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:17,435 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:47:17,436 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:17,440 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 13:47:17,447 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 13:47:17,448 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:47:17,449 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:47:17,478 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:47:17,510 - __main__ - ERROR - Error in main content area: There are multiple `radio` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `radio` element.
+2025-05-26 13:47:17,518 - __main__ - INFO - Session state reset successfully
+2025-05-26 13:47:17,785 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:47:17,786 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:47:17,789 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:47:17,791 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:18,262 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:47:18,263 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:19,898 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:47:19,899 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:47:19,899 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:47:19,900 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:20,354 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:47:20,355 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:20,718 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:47:20,719 - __main__ - INFO - Notification added: success - Login successful!
+2025-05-26 13:47:20,841 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:47:20,842 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:47:20,842 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:47:20,842 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:21,412 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:47:21,413 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:21,417 - core.db.Database - INFO - User 1 attached to session
+2025-05-26 13:47:21,422 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 13:47:21,423 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:47:21,424 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:47:21,455 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:47:21,465 - __main__ - ERROR - Error in main content area: There are multiple `radio` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `radio` element.
+2025-05-26 13:47:21,471 - __main__ - INFO - Session state reset successfully
+2025-05-26 13:47:21,706 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:47:21,706 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:47:21,706 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:47:21,706 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:47:22,193 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 13:47:22,193 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:24,870 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:24,871 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:24,871 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:24,872 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:25,281 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:49:25,457 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:25,457 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:25,458 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:25,458 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:25,480 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:26,578 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 13:49:26,579 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 13:49:26,579 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 13:49:26,579 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:49:26,581 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:49:34,057 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:34,058 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:34,059 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:34,059 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:34,084 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:34,246 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:34,246 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:34,247 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:34,247 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:34,262 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:35,017 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 13:49:35,017 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 13:49:35,017 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 13:49:35,018 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 13:49:35,018 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 13:49:39,822 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:39,822 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:39,823 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:39,823 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:39,836 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:40,011 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:40,011 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:40,012 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:40,012 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:40,026 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:50,855 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:50,857 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:50,858 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:50,860 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:50,885 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:51,116 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:49:51,117 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:49:51,117 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:49:51,118 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:49:51,136 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:51,150 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:49:51,189 - __main__ - ERROR - Failed to load activities: 'Database' object has no attribute 'get_user_activities'
+2025-05-26 13:50:07,872 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:50:07,873 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:50:07,874 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:50:07,874 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:50:07,889 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:50:08,039 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:50:08,040 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:50:08,040 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:50:08,041 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:50:08,060 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:50:28,499 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:50:28,500 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:50:28,501 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:50:28,502 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:50:28,526 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:50:28,811 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:50:28,812 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:50:28,813 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:50:28,814 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:50:28,833 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:50:28,852 - __main__ - ERROR - Rate limit check failed: unsupported operand type(s) for -: 'float' and 'NoneType'
+2025-05-26 13:50:34,372 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:50:34,373 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:50:34,373 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:50:34,374 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:50:34,390 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:50:34,407 - __main__ - ERROR - Rate limit check failed: unsupported operand type(s) for -: 'float' and 'NoneType'
+2025-05-26 13:54:00,321 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:00,322 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:00,322 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:00,322 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:11,237 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:11,239 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:11,240 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:11,240 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:11,639 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 13:54:11,758 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:11,759 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:11,759 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:11,760 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:11,776 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:54:12,408 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 13:54:12,409 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 13:54:12,409 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 13:54:12,409 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 13:54:12,412 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 13:54:16,845 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:16,846 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:16,847 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:16,848 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:16,871 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:54:17,039 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:17,039 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:17,040 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:17,041 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:17,063 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:54:17,444 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 13:54:17,445 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 13:54:17,446 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 13:54:17,446 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 13:54:17,447 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 13:54:34,108 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:34,111 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:34,112 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:34,113 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:34,149 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:54:34,418 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:54:34,420 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:54:34,420 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:54:34,421 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:54:34,436 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:54:36,864 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 13:54:36,945 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 13:54:36,947 - __main__ - ERROR - Error processing query: 'Database' object has no attribute 'current_user'
+2025-05-26 13:57:52,264 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 13:57:52,265 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 13:57:52,266 - __main__ - INFO - Database initialized successfully
+2025-05-26 13:57:52,321 - __main__ - INFO - Successfully initialized core components
+2025-05-26 13:57:52,353 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 13:57:54,020 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 13:57:54,022 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 13:57:54,157 - core.db.Database - INFO - Query added successfully: 1
+2025-05-26 13:57:54,758 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 13:57:54,769 - core.llm.gpt.gpt - INFO - Analyzed sentiment: NEUTRAL
+2025-05-26 13:57:54,770 - __main__ - INFO - Successfully processed query with intent: general_inquiry and sentiment: NEUTRAL
+2025-05-26 14:02:27,070 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:02:27,070 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:02:27,071 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:02:27,071 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:02:32,474 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:02:32,475 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:02:32,476 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:02:32,476 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:04:14,120 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:04:14,121 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:04:14,122 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:04:14,122 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:04:16,182 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:04:16,184 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:04:16,185 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:04:16,186 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:04:24,961 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:04:24,961 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:04:24,963 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:04:24,964 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:04:27,506 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:04:27,507 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:04:27,508 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:04:27,509 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:06:08,460 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:06:08,460 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:06:08,461 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:06:08,461 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:06:10,647 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:06:10,648 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:06:10,649 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:06:10,649 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:06:58,323 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:06:58,323 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:06:58,324 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:06:58,324 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:06:58,928 - core.db.Database - ERROR - Failed to add user: (sqlite3.IntegrityError) NOT NULL constraint failed: users.account_number
+[SQL: INSERT INTO users (name, phone, email, password, account_number, latitude, longitude, created_at, last_login, login_count, last_location, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Urvashi Thakur', '9373314503', 'ut472003@gmail.com', '$2b$12$fYz9PKl0EicToMbQIrW1CuqckUxICvBIMEB.ElM.anFb2k/Ptn8b6', None, 18.5196, 73.8554, '2025-05-26 08:36:58.683480', '2025-05-26 08:36:58.683480', 1, None, 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-26 14:06:58,929 - __main__ - ERROR - Registration error: (sqlite3.IntegrityError) NOT NULL constraint failed: users.account_number
+[SQL: INSERT INTO users (name, phone, email, password, account_number, latitude, longitude, created_at, last_login, login_count, last_location, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Urvashi Thakur', '9373314503', 'ut472003@gmail.com', '$2b$12$fYz9PKl0EicToMbQIrW1CuqckUxICvBIMEB.ElM.anFb2k/Ptn8b6', None, 18.5196, 73.8554, '2025-05-26 08:36:58.683480', '2025-05-26 08:36:58.683480', 1, None, 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-26 14:09:53,619 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:09:53,619 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:09:53,620 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:09:53,620 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:09:57,676 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:09:57,677 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:09:57,677 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:09:57,678 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:10:30,873 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:10:30,874 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:10:30,874 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:10:30,875 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:10:31,591 - core.db.Database - INFO - New user created with ID: 2 and account number: 6884841640
+2025-05-26 14:10:31,729 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:10:31,729 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:10:31,730 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:10:31,730 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:10:31,752 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:10:34,155 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 14:10:34,156 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 14:10:34,156 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 14:10:34,156 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 14:10:34,158 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 14:10:55,127 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:10:55,128 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:10:55,129 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:10:55,130 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:10:55,151 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:10:55,403 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:10:55,404 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:10:55,404 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:10:55,405 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:10:55,419 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:10:55,914 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 14:10:55,915 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 14:10:55,916 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 14:10:55,916 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 14:10:55,917 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 14:11:18,138 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:11:18,139 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:11:18,140 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:11:18,142 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:11:18,178 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:11:18,491 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:11:18,493 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:11:18,493 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:11:18,494 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:11:18,509 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:11:19,894 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 14:11:19,896 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 14:11:19,896 - __main__ - INFO - Raw LLM response - Intent: general_inquiry, Response: I'm sorry to hear about the fraud incident. Please contact our customer service immediately at [phone number] to report the fraud and get assistance in resolving the issue.
+2025-05-26 14:11:20,097 - core.db.Database - INFO - Query added successfully: 2
+2025-05-26 14:11:20,986 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 14:11:20,989 - core.llm.gpt.gpt - INFO - Analyzed sentiment: POSITIVE
+2025-05-26 14:11:24,655 - core.agent.agent - ERROR - TTS playback failed: 'module' object is not callable
+2025-05-26 14:11:24,656 - __main__ - WARNING - Failed to speak response
+2025-05-26 14:11:24,656 - __main__ - INFO - Successfully processed query with intent: general_inquiry and sentiment: POSITIVE
+2025-05-26 14:15:01,772 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:15:01,773 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:15:01,773 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:15:01,773 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:15:01,793 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:15:03,234 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 14:15:03,276 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 14:15:03,276 - __main__ - INFO - Raw LLM response - Intent: general_inquiry, Response: I'm sorry to hear that you have experienced fraud. Please contact our customer service team immediately at [phone number] to report the fraud and get assistance in resolving the issue. It's important to act quickly to protect your account and funds. Thank you for bringing this to our attention.
+2025-05-26 14:15:03,395 - core.db.Database - INFO - Query added successfully: 3
+2025-05-26 14:15:03,860 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 14:15:03,862 - core.llm.gpt.gpt - INFO - Analyzed sentiment: POSITIVE
+2025-05-26 14:15:06,349 - core.agent.agent - ERROR - TTS playback failed: 'module' object is not callable
+2025-05-26 14:15:06,349 - __main__ - WARNING - Failed to speak response
+2025-05-26 14:15:06,350 - __main__ - INFO - Successfully processed query with intent: general_inquiry and sentiment: POSITIVE
+2025-05-26 14:15:06,571 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:15:06,571 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:15:06,572 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:15:06,572 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:15:06,590 - core.db.Database - INFO - Successfully refreshed user 2
+2025-05-26 14:15:28,424 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:15:28,425 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:15:28,426 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:15:28,427 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:16:27,616 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:16:27,617 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:16:27,617 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:16:27,617 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:16:40,517 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:16:40,517 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:16:40,518 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:16:40,637 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:16:40,999 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 14:16:41,122 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:16:41,122 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:16:41,123 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:16:41,123 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:16:41,138 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 14:16:43,186 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 14:16:43,187 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 14:16:43,189 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 14:16:43,189 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 14:16:43,191 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 14:18:17,278 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:18:17,279 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:18:17,280 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:18:17,280 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:18:30,738 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:18:30,738 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:18:30,739 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:18:30,739 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:18:31,224 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 14:18:31,352 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:18:31,352 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:18:31,353 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:18:31,353 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:18:31,375 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 14:18:38,228 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 14:18:38,229 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 14:18:38,229 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 14:18:38,229 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 14:18:38,230 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 14:21:39,070 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:21:39,070 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:21:39,070 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:21:39,071 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:21:50,266 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:21:50,267 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:21:50,267 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:21:50,267 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:21:50,658 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 14:21:50,779 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:21:50,779 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:21:50,779 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:21:50,779 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:21:50,795 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 14:21:53,693 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 14:21:53,694 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 14:21:53,694 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 14:21:53,694 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 14:21:53,695 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 14:22:06,961 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:22:06,962 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:22:06,963 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:22:06,964 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:22:06,989 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 14:22:07,195 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 14:22:07,195 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 14:22:07,196 - __main__ - INFO - Database initialized successfully
+2025-05-26 14:22:07,197 - __main__ - INFO - Successfully initialized core components
+2025-05-26 14:22:07,210 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 14:22:07,631 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 14:22:07,631 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 14:22:07,631 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 14:22:07,632 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 14:22:07,632 - __main__ - INFO - Successfully initialized gpt model

@@ -10,10 +10,13 @@ from datetime import datetime
 from core.llm.mistral.mistral import Mistral
 from core.llm.tinyllama.tinyllama import TinyLlama
 from core.llm.gpt.gpt import GPT
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Dict
 import time
 
 logger = logging.getLogger(__name__)
+
+# Global model cache
+_model_cache: Dict[str, object] = {}
 
 class LLM(Enum):
     MISTRAL = "mistral"
@@ -37,7 +40,13 @@ class LLM(Enum):
     @classmethod
     def get_index(cls, llm: 'LLM') -> int:
         """Get index of LLM in the list of values."""
-        return list(cls).index(llm)
+        try:
+            if isinstance(llm, str):
+                llm = cls.from_name(llm)
+            return list(cls).index(llm)
+        except (ValueError, AttributeError):
+            logger.warning(f"Invalid LLM value: {llm}, defaulting to MISTRAL")
+            return 0  # Default to MISTRAL index
 
 class Agent:
     def __init__(self, model: LLM = LLM.MISTRAL):
@@ -46,9 +55,26 @@ class Agent:
         self._initialize_model()
         logger.info(f"Initialized agent with model: {model.value}")
 
+    def _get_cached_model(self, model_name: str) -> Optional[object]:
+        """Get model from cache if available."""
+        return _model_cache.get(model_name)
+
+    def _cache_model(self, model_name: str, model: object):
+        """Cache a model instance."""
+        _model_cache[model_name] = model
+        logger.info(f"Cached {model_name} model")
+
     def _initialize_model(self):
-        """Initialize the selected model."""
+        """Initialize the selected model with caching."""
         try:
+            # Check cache first
+            cached_model = self._get_cached_model(self.model.value)
+            if cached_model:
+                self.agent = cached_model
+                logger.info(f"Using cached {self.model.value} model")
+                return
+
+            # Initialize new model if not in cache
             if self.model == LLM.MISTRAL:
                 self.agent = Mistral()
             elif self.model == LLM.GPT:
@@ -57,14 +83,28 @@ class Agent:
                 self.agent = TinyLlama()
             else:
                 raise ValueError(f"Unsupported model: {self.model}")
-            logger.info(f"Successfully initialized {self.model.value} model")
+
+            # Cache the initialized model
+            self._cache_model(self.model.value, self.agent)
+            logger.info(f"Successfully initialized and cached {self.model.value} model")
+
         except Exception as e:
             logger.error(f"Failed to initialize {self.model.value} model: {e}")
-            # Fallback to Mistral if initialization fails
+            # Try to get any available model from cache
+            for model_name in LLM.get_values():
+                cached_model = self._get_cached_model(model_name)
+                if cached_model:
+                    self.agent = cached_model
+                    self.model = LLM.from_name(model_name)
+                    logger.info(f"Falling back to cached {model_name} model")
+                    return
+
+            # If no cached models available, fallback to Mistral
             if self.model != LLM.MISTRAL:
-                logger.info("Falling back to Mistral model")
+                logger.info("No cached models available, falling back to Mistral")
                 self.model = LLM.MISTRAL
                 self.agent = Mistral()
+                self._cache_model(self.model.value, self.agent)
 
     def speak(self, text: str) -> bool:
         """
@@ -126,3 +166,10 @@ class Agent:
 
     def __str__(self):
         return f"Agent using {self.agent}"
+
+    @classmethod
+    def clear_cache(cls):
+        """Clear the model cache."""
+        global _model_cache
+        _model_cache.clear()
+        logger.info("Model cache cleared")

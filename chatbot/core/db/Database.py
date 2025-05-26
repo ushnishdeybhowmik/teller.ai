@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine, inspect, Boolean
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine, inspect, Boolean, Column, Integer, String, Float, DateTime, ForeignKey, Text
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, scoped_session
 from datetime import datetime, timedelta
 import logging
 from typing import Optional, List, Dict, Any
@@ -20,116 +21,70 @@ logger = logging.getLogger(__name__)
 
 class Database:
     def __init__(self):
-        """Initialize database connection and create tables if they don't exist."""
+        """Initialize database connection and session."""
         try:
-            db_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'tellerai.db')
-            self.engine = create_engine(f'sqlite:///{db_path}')
-            
-            # Check if tables exist and create them if they don't
-            inspector = inspect(self.engine)
-            existing_tables = inspector.get_table_names()
-            
-            if not existing_tables:
-                # Create all tables if none exist
-                Base.metadata.create_all(self.engine)
-                # Create admin user if not exists
-                self._create_admin_user()
-                logger.info("Created new database tables and admin user")
-            else:
-                # Check if we need to add new columns
-                if 'users' in existing_tables:
-                    columns = [col['name'] for col in inspector.get_columns('users')]
-                    new_columns = ['login_count', 'last_location', 'email', 'is_admin']
-                    if any(col not in columns for col in new_columns):
-                        Base.metadata.drop_all(self.engine)
-                        Base.metadata.create_all(self.engine)
-                        self._create_admin_user()
-                        logger.info("Updated database schema with new columns")
-                
-                if 'user_queries' in existing_tables:
-                    columns = [col['name'] for col in inspector.get_columns('user_queries')]
-                    new_columns = ['location', 'sentiment', 'resolution_time', 'follow_up_required', 'query_metadata']
-                    if any(col not in columns for col in new_columns):
-                        Base.metadata.drop_all(self.engine)
-                        Base.metadata.create_all(self.engine)
-                        logger.info("Updated database schema with new columns")
-            
-            self.Session = sessionmaker(bind=self.engine)
-            self.current_user = None
+            self.engine = create_engine('sqlite:///tellerai.db')
+            self.Session = scoped_session(sessionmaker(bind=self.engine))
+            self.Base = declarative_base()
+            self._create_tables()
             logger.info("Database initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize database: {e}")
             raise
 
-    def getEngine(self):
-        """Get the database engine."""
-        return self.engine
-
-    def setUser(self, user: User):
-        """Set the current user."""
-        self.current_user = user
-
-    def addUser(self, name: str, phone: str, email: str, password: str, lat: float, long: float) -> User:
-        """
-        Add a new user to the database.
-        
-        Args:
-            name (str): User's full name
-            phone (str): User's phone number
-            email (str): User's email address
-            password (str): Hashed password
-            lat (float): User's latitude
-            long (float): User's longitude
-            
-        Returns:
-            User: The created user object
-            
-        Raises:
-            ValueError: If user already exists
-        """
+    def _create_tables(self):
+        """Create database tables if they don't exist."""
         try:
-            session = self.Session()
-            
-            # Check if user exists
-            if session.query(User).filter_by(phone=phone).first():
-                raise ValueError("Phone number already registered")
-            if session.query(User).filter_by(email=email).first():
-                raise ValueError("Email already registered")
-            
-            # Generate account number
-            account_number = self._generate_account_number()
-            
-            # Create user
-            user = User(
-                name=name,
-                phone=phone,
-                email=email,
-                password=password,
-                account_number=account_number,
-                latitude=lat,
-                longitude=long,
-                created_at=datetime.utcnow()
-            )
-            
-            session.add(user)
-            session.commit()
-            logger.info(f"User created successfully: {user.account_number}")
-            return user
-            
+            self.Base.metadata.create_all(self.engine)
+            logger.info("Database tables created/verified")
         except Exception as e:
-            session.rollback()
-            logger.error(f"Error adding user: {e}")
+            logger.error(f"Failed to create database tables: {e}")
             raise
+
+    def get_session(self):
+        """Get a new database session."""
+        return self.Session()
+
+    def refresh_user(self, user: User) -> Optional[User]:
+        """Refresh a user object from the database."""
+        try:
+            session = self.get_session()
+            refreshed_user = session.query(User).filter(User.id == user.id).first()
+            if refreshed_user:
+                session.refresh(refreshed_user)
+                logger.info(f"Successfully refreshed user {user.id}")
+                return refreshed_user
+            return None
+        except Exception as e:
+            logger.error(f"Failed to refresh user: {e}")
+            return None
+        finally:
+            session.close()
+
+    def setUser(self, user: User) -> None:
+        """Ensure user object is attached to session."""
+        try:
+            session = self.get_session()
+            session.add(user)
+            session.refresh(user)
+            session.commit()
+            logger.info(f"User {user.id} attached to session")
+        except Exception as e:
+            logger.error(f"Failed to set user in session: {e}")
+            session.rollback()
         finally:
             session.close()
 
     def getUserFromPhoneNo(self, phone: str) -> Optional[User]:
         """Get user by phone number."""
         try:
-            session = self.Session()
-            return session.query(User).filter_by(phone=phone).first()
+            session = self.get_session()
+            user = session.query(User).filter(User.phone == phone).first()
+            if user:
+                session.refresh(user)
+            return user
         except Exception as e:
-            logger.error(f"Error getting user by phone: {e}")
+            logger.error(f"Failed to get user by phone: {e}")
             return None
         finally:
             session.close()
@@ -137,11 +92,81 @@ class Database:
     def getUserFromEmail(self, email: str) -> Optional[User]:
         """Get user by email."""
         try:
-            session = self.Session()
-            return session.query(User).filter_by(email=email).first()
+            session = self.get_session()
+            user = session.query(User).filter(User.email == email).first()
+            if user:
+                session.refresh(user)
+            return user
         except Exception as e:
-            logger.error(f"Error getting user by email: {e}")
+            logger.error(f"Failed to get user by email: {e}")
             return None
+        finally:
+            session.close()
+
+    def authenticate_user(self, identifier: str, password: str) -> Optional[User]:
+        """Authenticate user by email/phone and password."""
+        try:
+            session = self.get_session()
+            user = session.query(User).filter(
+                (User.email == identifier) | (User.phone == identifier)
+            ).first()
+            
+            if user and user.verify_password(password):
+                session.refresh(user)
+                user.last_login = datetime.utcnow()
+                user.login_count += 1
+                session.commit()
+                logger.info(f"User {user.id} authenticated successfully")
+                return user
+            return None
+        except Exception as e:
+            logger.error(f"Authentication failed: {e}")
+            session.rollback()
+            return None
+        finally:
+            session.close()
+
+    def addUser(self, name: str, phone: str, email: str, password: str, 
+                lat: Optional[float] = None, long: Optional[float] = None) -> User:
+        """Add a new user."""
+        try:
+            session = self.get_session()
+            # Generate a unique account number
+            account_number = self._generate_account_number()
+            
+            user = User(
+                name=name,
+                phone=phone,
+                email=email,
+                password=password,
+                account_number=account_number,  # Set the generated account number
+                latitude=lat,
+                longitude=long,
+                created_at=datetime.utcnow(),
+                last_login=datetime.utcnow(),
+                login_count=1
+            )
+            session.add(user)
+            session.commit()
+            session.refresh(user)
+            logger.info(f"New user created with ID: {user.id} and account number: {account_number}")
+            return user
+        except Exception as e:
+            logger.error(f"Failed to add user: {e}")
+            session.rollback()
+            raise
+        finally:
+            session.close()
+
+    def get_user_queries(self, user_id: int) -> List[Dict[str, Any]]:
+        """Get user's queries with proper session management."""
+        try:
+            session = self.get_session()
+            queries = session.query(UserQuery).filter(UserQuery.user_id == user_id).all()
+            return [query.to_dict() for query in queries]
+        except Exception as e:
+            logger.error(f"Failed to get user queries: {e}")
+            return []
         finally:
             session.close()
 
@@ -179,17 +204,12 @@ class Database:
         Returns:
             int: The ID of the created query
         """
-        if not self.current_user:
-            raise ValueError("No user logged in")
-        
         try:
             session = self.Session()
             user_query = UserQuery(
-                user_id=self.current_user.id,
                 query=query,
                 intent=intent,
                 response=response,
-                location=self.current_user.last_location,
                 query_metadata=metadata or {},
                 timestamp=datetime.utcnow()
             )
@@ -236,41 +256,6 @@ class Database:
                 return account_number
             session.close()
 
-    def get_user_queries(self, user_id: int) -> List[Dict[str, Any]]:
-        """
-        Get all queries for a user.
-        
-        Args:
-            user_id (int): The user's ID
-            
-        Returns:
-            List[Dict[str, Any]]: List of query dictionaries
-        """
-        try:
-            session = self.Session()
-            queries = session.query(UserQuery).filter_by(user_id=user_id).all()
-            return [
-                {
-                    'id': q.id,
-                    'query': q.query,
-                    'intent': q.intent,
-                    'response': q.response,
-                    'rating': q.rating,
-                    'timestamp': q.timestamp,
-                    'location': q.location,
-                    'sentiment': q.sentiment,
-                    'resolution_time': q.resolution_time,
-                    'follow_up_required': q.follow_up_required,
-                    'metadata': q.query_metadata
-                }
-                for q in queries
-            ]
-        except Exception as e:
-            logger.error(f"Error getting user queries: {e}")
-            return []
-        finally:
-            session.close()
-
     def get_user_stats(self, user_id: int) -> Dict[str, Any]:
         """
         Get statistics for a user.
@@ -312,37 +297,6 @@ class Database:
                 'sentiment_distribution': {},
                 'last_query': None
             }
-        finally:
-            session.close()
-
-    def authenticate_user(self, identifier: str, password: str) -> Optional[User]:
-        """
-        Authenticate user using email/phone and password.
-        
-        Args:
-            identifier (str): Email or phone number
-            password (str): User's password
-            
-        Returns:
-            Optional[User]: User object if authentication successful, None otherwise
-        """
-        try:
-            session = self.Session()
-            # Try to find user by email or phone
-            user = session.query(User).filter(
-                (User.email == identifier) | (User.phone == identifier)
-            ).first()
-            
-            if user and verify_password(password, user.password):
-                # Update login stats
-                user.last_login = datetime.utcnow()
-                user.login_count += 1
-                session.commit()
-                return user
-            return None
-        except Exception as e:
-            logger.error(f"Authentication error: {e}")
-            return None
         finally:
             session.close()
 
