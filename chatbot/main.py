@@ -119,6 +119,7 @@ st.markdown("""
         --success-color: #2E7D32;
         --warning-color: #E65100;
         --info-color: #1565C0;
+        --text-color-dark-bg: #000000
     }
 
     /* Main Container */
@@ -253,6 +254,7 @@ st.markdown("""
         padding: 20px;
         background-color: var(--background-color);
         border-top: 1px solid rgba(255,255,255,0.1);
+        color: black;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -466,6 +468,30 @@ def show_dashboard():
 
             st.markdown('</div>', unsafe_allow_html=True)
 
+            # Recent Queries
+            st.markdown('<div class="recent-queries-section">', unsafe_allow_html=True)
+            st.subheader("📝 Recent Queries")
+            
+            queries = db.get_user_queries(st.session_state.user.id)
+            if queries:
+                for query in sorted(queries, key=lambda x: x['timestamp'], reverse=True)[:5]:
+                    with st.expander(f"Query from {query['timestamp'].strftime('%Y-%m-%d %H:%M')}"):
+                        st.markdown(f"**Your Question:** {query['query']}")
+                        st.markdown(f"**Intent:** {query['intent']}")
+                        st.markdown(f"**Response:** {query['response']}")
+                        if query['rating']:
+                            st.markdown(f"**Rating:** {'⭐' * query['rating']}")
+                        if query['sentiment']:
+                            st.markdown(f"**Sentiment:** {query['sentiment']}")
+                        if query['resolution_time']:
+                            st.markdown(f"**Resolution Time:** {query['resolution_time']:.2f}s")
+                        if query['follow_up_required']:
+                            st.markdown("**Follow-up Required:** Yes")
+            else:
+                st.info("No recent queries found.")
+            
+            st.markdown('</div>', unsafe_allow_html=True)
+
     except Exception as e:
         logger.error(f"Dashboard error: {e}")
         st.error("Failed to load dashboard. Please try again later.")
@@ -633,8 +659,6 @@ def show_user_profile():
 
 def show_chat_interface():
     """Show the chat interface."""
-    st.markdown('<div class="chat-container">', unsafe_allow_html=True)
-    
     # Chat header with model info
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -645,109 +669,115 @@ def show_chat_interface():
     # Initialize agent if needed
     initialize_agent()
 
-    # Chat history container with scrolling
+    # Simple and clean styles
     st.markdown("""
         <style>
         .chat-container {
-            padding: 20px;
+            padding: 10px;
             background-color: var(--background-color);
-            min-height: 100vh;
-            color: var(--text-color);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
         }
         .chat-history {
-            height: 500px;
             overflow-y: auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #f8f9fa;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border: 1px solid rgba(0,0,0,0.1);
         }
         .chat-message {
-            padding: 15px;
-            border-radius: 15px;
-            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
             max-width: 80%;
-            position: relative;
             word-wrap: break-word;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         .user-message {
             background-color: var(--primary-color);
             color: white;
             margin-left: auto;
             margin-right: 0;
-            border-bottom-right-radius: 5px;
         }
         .bot-message {
             background-color: #e9ecef;
             color: #212529;
             margin-right: auto;
             margin-left: 0;
-            border-bottom-left-radius: 5px;
         }
         .chat-timestamp {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #6c757d;
-            margin-top: 5px;
+            margin-top: 3px;
             text-align: right;
         }
         .message-meta {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #6c757d;
-            margin-top: 5px;
-            padding-top: 5px;
+            margin-top: 3px;
+            padding-top: 3px;
             border-top: 1px solid rgba(0,0,0,0.1);
         }
         .chat-input {
-            padding: 20px;
+            padding: 10px;
             background-color: var(--background-color);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            color: black;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
-        .stTextArea>div>div>textarea {
+        .stTextInput>div>div>input {
             background-color: #f8f9fa;
+            color: black;
             border: 1px solid rgba(0,0,0,0.1);
             border-radius: 10px;
-            padding: 10px;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+        .stTextInput>div>div>input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 1px var(--primary-color);
         }
         .stButton>button {
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .stButton>button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 38px;
+            padding: 0 15px;
         }
         </style>
     """, unsafe_allow_html=True)
 
-    # Chat history
-    st.markdown('<div class="chat-history">', unsafe_allow_html=True)
-    for message in st.session_state.chat_history:
-        if message["type"] == "user":
-            st.markdown(f"""
-                <div class="chat-message user-message">
-                    <div class="message-content">{message["content"]}</div>
-                    <div class="chat-timestamp">{message["timestamp"]}</div>
-                </div>
-            """, unsafe_allow_html=True)
-        else:
-            # For bot messages, include intent and sentiment if available
-            meta_info = ""
-            if "intent" in message:
-                meta_info += f'<div class="message-meta">Intent: {message["intent"]}</div>'
-            if "sentiment" in message:
-                meta_info += f'<div class="message-meta">Sentiment: {message["sentiment"]}</div>'
-            
-            st.markdown(f"""
-                <div class="chat-message bot-message">
-                    <div class="message-content">{message["content"]}</div>
-                    {meta_info}
-                    <div class="chat-timestamp">{message["timestamp"]}</div>
-                </div>
-            """, unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    # Main chat container
+    st.markdown('<div class="chat-container">', unsafe_allow_html=True)
+
+    # Only show chat history if it exists
+    if st.session_state.chat_history:
+        st.markdown('<div class="chat-history">', unsafe_allow_html=True)
+        for message in st.session_state.chat_history:
+            if message["type"] == "user":
+                st.markdown(f"""
+                    <div class="chat-message user-message">
+                        <div class="message-content">{message["content"]}</div>
+                        <div class="chat-timestamp">{message["timestamp"]}</div>
+                    </div>
+                """, unsafe_allow_html=True)
+            else:
+                meta_info = ""
+                if "intent" in message:
+                    meta_info += f'<div class="message-meta">Intent: {message["intent"]}</div>'
+                if "sentiment" in message:
+                    meta_info += f'<div class="message-meta">Sentiment: {message["sentiment"]}</div>'
+                
+                st.markdown(f"""
+                    <div class="chat-message bot-message">
+                        <div class="message-content">{message["content"]}</div>
+                        {meta_info}
+                        <div class="chat-timestamp">{message["timestamp"]}</div>
+                    </div>
+                """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     # Input area
     st.markdown('<div class="chat-input">', unsafe_allow_html=True)
@@ -764,7 +794,7 @@ def show_chat_interface():
         )
     
     with input_col2:
-        if st.button("🗑️ Clear Chat", use_container_width=True, key="clear_chat"):
+        if st.button("🗑️ Clear", use_container_width=True, key="clear_chat"):
             st.session_state.chat_history = []
             st.info("Chat history cleared")
             st.rerun()
@@ -787,12 +817,13 @@ def show_chat_interface():
                     st.error("⚠️ Speech recognition error. Please try again.")
                     st.stop()
     else:
-        st.session_state.user_query = st.text_area(
+        # Use text input instead of text area
+        st.session_state.user_query = st.text_input(
             "Type your message",
             value=st.session_state.get("user_query", ""),
-            height=100,
             placeholder="Ask me anything about banking...",
-            key="chat_text_input"
+            key="chat_text_input",
+            label_visibility="collapsed"
         )
 
     # Send button
