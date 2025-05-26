@@ -1395,3 +1395,484 @@ To fix this error, please pass a unique `key` argument to the `radio` element.
 2025-05-26 14:54:18,815 - core.db.Database - INFO - Database initialized successfully
 2025-05-26 14:54:18,816 - __main__ - INFO - Database initialized successfully
 2025-05-26 14:54:18,817 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:54:50,903 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:54:50,940 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:54:50,941 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:54:52,203 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 15:54:52,208 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:55:08,264 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:55:08,265 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:55:08,266 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:55:08,267 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:55:09,377 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 15:55:09,622 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:55:09,622 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:55:09,623 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:55:09,623 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:55:09,679 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:55:12,913 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 15:55:12,914 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 15:55:12,915 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 15:55:12,961 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 15:55:12,965 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 15:55:30,133 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:55:30,134 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:55:30,135 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:55:30,136 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:55:30,413 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:55:30,619 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:55:30,620 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:55:30,620 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:55:30,622 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:55:30,732 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:55:32,858 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 15:55:32,858 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 15:55:32,859 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 15:55:32,860 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 15:55:32,861 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 15:55:59,974 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:55:59,976 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:55:59,978 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:55:59,982 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:56:00,065 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:56:00,403 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:56:00,404 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:56:00,409 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:56:00,411 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:56:00,461 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:56:02,245 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 15:56:02,535 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 15:56:02,536 - __main__ - INFO - Raw LLM response - Intent: general_inquiry, Response: I'm sorry to hear that you're having trouble withdrawing money from your account. Please check if there are any temporary issues with the ATM or if there are any transaction limits on your account. If the issue persists, I recommend contacting our customer support for further assistance.
+2025-05-26 15:56:02,730 - core.db.Database - INFO - Query added successfully: 6
+2025-05-26 15:56:03,541 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 15:56:03,546 - core.llm.gpt.gpt - INFO - Analyzed sentiment: NEUTRAL
+2025-05-26 15:56:06,413 - core.agent.agent - ERROR - TTS playback failed: 'module' object is not callable
+2025-05-26 15:56:06,414 - __main__ - WARNING - Failed to speak response
+2025-05-26 15:56:06,416 - __main__ - INFO - Successfully processed query with intent: general_inquiry and sentiment: NEUTRAL
+2025-05-26 15:56:06,677 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:56:06,678 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:56:06,679 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:56:06,680 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:56:06,720 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:56:46,730 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:56:46,730 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:56:46,731 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:56:46,732 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:56:46,798 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:56:59,064 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:56:59,066 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:56:59,066 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:56:59,067 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:56:59,118 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:57:20,691 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:57:20,694 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:57:20,696 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:57:20,698 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:57:20,738 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 15:57:21,012 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 15:57:21,014 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 15:57:21,015 - __main__ - INFO - Database initialized successfully
+2025-05-26 15:57:21,016 - __main__ - INFO - Successfully initialized core components
+2025-05-26 15:57:21,048 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:03:59,670 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:03:59,671 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:03:59,672 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:03:59,672 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:04:10,451 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:04:10,453 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:04:10,455 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:04:10,458 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:04:56,303 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:04:56,304 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:04:56,304 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:04:56,305 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:04:56,717 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 16:04:56,824 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:04:56,824 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:04:56,825 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:04:56,825 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:04:56,847 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:04:57,713 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 16:04:57,715 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 16:04:57,717 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 16:04:57,719 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 16:04:57,726 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 16:04:59,647 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:04:59,648 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:04:59,649 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:04:59,649 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:04:59,667 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:04:59,865 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:04:59,865 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:04:59,866 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:04:59,867 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:04:59,884 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:11,019 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:11,019 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:11,020 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:11,020 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:11,034 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:11,226 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:11,226 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:11,227 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:11,227 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:11,242 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:14,716 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:14,716 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:14,717 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:14,718 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:14,737 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:14,951 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:14,952 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:14,952 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:14,953 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:14,980 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:15,434 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 16:05:15,435 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 16:05:15,435 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 16:05:15,435 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 16:05:15,436 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 16:05:29,339 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:29,340 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:29,340 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:29,340 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:29,370 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:29,585 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:29,586 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:29,586 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:29,586 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:29,601 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:05:40,701 - openai._base_client - INFO - Retrying request to /chat/completions in 0.471814 seconds
+2025-05-26 16:05:42,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 16:05:42,406 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 16:05:42,407 - __main__ - INFO - Raw LLM response - Intent: general_inquiry, Response: I'm sorry to hear that you're having trouble opening a bank account. Please visit your nearest branch or contact our customer service for assistance with opening an account.
+2025-05-26 16:05:43,016 - core.db.Database - INFO - Query added successfully: 7
+2025-05-26 16:05:43,415 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 16:05:43,417 - core.llm.gpt.gpt - INFO - Analyzed sentiment: POSITIVE
+2025-05-26 16:05:45,764 - core.agent.agent - ERROR - TTS playback failed: 'module' object is not callable
+2025-05-26 16:05:45,764 - __main__ - WARNING - Failed to speak response
+2025-05-26 16:05:45,765 - __main__ - INFO - Successfully processed query with intent: general_inquiry and sentiment: POSITIVE
+2025-05-26 16:05:45,967 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:05:45,967 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:05:45,968 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:05:45,968 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:05:45,984 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:01,239 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:07:01,239 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:07:01,240 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:07:01,240 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:07:01,264 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:05,941 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:07:05,942 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:07:05,942 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:07:05,943 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:07:05,958 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:06,182 - core.db.Database - INFO - Updated rating for query 7 to 3
+2025-05-26 16:07:06,185 - __main__ - INFO - Rating 3 submitted for query 7
+2025-05-26 16:07:06,344 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:07:06,344 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:07:06,345 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:07:06,346 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:07:06,366 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:08,489 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:07:08,490 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:07:08,490 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:07:08,491 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:07:08,504 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:08,684 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:07:08,685 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:07:08,686 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:07:08,687 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:07:08,701 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:59,456 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:07:59,457 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:07:59,458 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:07:59,458 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:07:59,501 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:07:59,526 - __main__ - INFO - Session state reset successfully
+2025-05-26 16:08:00,045 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:08:00,046 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:08:00,047 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:08:00,048 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:08:19,160 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:08:19,161 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:08:19,163 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:08:19,164 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:10:21,285 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:10:22,166 - core.db.Database - INFO - Created admin user
+2025-05-26 16:10:22,167 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:10:22,168 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:10:22,168 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:10:37,871 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:10:37,880 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:10:37,881 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:10:37,881 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:10:49,634 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:10:49,642 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:10:49,643 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:10:49,648 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:10:57,177 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:10:57,187 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:10:57,188 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:10:57,189 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:11:13,175 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:11:13,182 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:11:13,182 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:11:13,183 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:11:33,773 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:11:33,782 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:11:33,783 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:11:33,785 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:11:47,536 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:11:47,543 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:11:47,544 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:11:47,544 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:11:59,755 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:11:59,762 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:11:59,763 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:11:59,763 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:12:00,448 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 16:12:00,676 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:12:00,684 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:12:00,685 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:12:00,686 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:12:00,732 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:12:01,937 - core.llm.mistral.mistral - INFO - Successfully initialized Mistral model from D:\Neil\Python Projects\teller.ai\chatbot\core\llm\mistral\mistral-7b-instruct-v0.2.Q4_K_M.gguf
+2025-05-26 16:12:01,941 - core.agent.agent - INFO - Cached mistral model
+2025-05-26 16:12:01,943 - core.agent.agent - INFO - Successfully initialized and cached mistral model
+2025-05-26 16:12:01,944 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 16:12:01,948 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 16:12:05,894 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:12:05,903 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:12:05,904 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:12:05,905 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:12:05,944 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:12:51,725 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:12:51,740 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:12:51,743 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:12:51,745 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:12:51,790 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:13:02,946 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:02,965 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:02,967 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:02,969 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:03,025 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:13:03,385 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:03,395 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:03,397 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:03,399 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:03,451 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:13:23,540 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:23,555 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:23,556 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:23,558 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:41,385 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:41,407 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:41,409 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:41,412 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:42,064 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 16:13:42,325 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:42,334 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:42,335 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:42,337 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:42,384 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:13:42,424 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 16:13:42,428 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 16:13:42,431 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 16:13:45,784 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:45,795 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:45,796 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:45,798 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:45,841 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:13:46,267 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:13:46,277 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:13:46,279 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:13:46,280 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:13:46,323 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:13:47,467 - core.llm.gpt.gpt - INFO - Successfully initialized GPT model
+2025-05-26 16:13:47,469 - core.agent.agent - INFO - Cached gpt model
+2025-05-26 16:13:47,470 - core.agent.agent - INFO - Successfully initialized and cached gpt model
+2025-05-26 16:13:47,470 - core.agent.agent - INFO - Initialized agent with model: gpt
+2025-05-26 16:13:47,471 - __main__ - INFO - Successfully initialized gpt model
+2025-05-26 16:14:11,491 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:11,505 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:11,507 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:11,509 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:11,704 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:11,716 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:11,717 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:11,718 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:12,065 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:14:13,944 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 16:14:13,947 - core.llm.gpt.gpt - INFO - Successfully processed query with intent: general_inquiry
+2025-05-26 16:14:13,947 - __main__ - INFO - Raw LLM response - Intent: general_inquiry, Response: I'm sorry to hear that you're having trouble opening your account. Please contact our customer service team at [phone number] or visit your nearest branch for assistance with account opening.
+2025-05-26 16:14:14,213 - core.db.Database - INFO - Query added successfully: 8
+2025-05-26 16:14:15,678 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 16:14:15,681 - core.llm.gpt.gpt - INFO - Analyzed sentiment: POSITIVE
+2025-05-26 16:14:19,397 - core.agent.agent - ERROR - TTS playback failed: 'module' object is not callable
+2025-05-26 16:14:19,398 - __main__ - WARNING - Failed to speak response
+2025-05-26 16:14:19,399 - __main__ - INFO - Successfully processed query with intent: general_inquiry and sentiment: POSITIVE
+2025-05-26 16:14:19,730 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:19,741 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:19,742 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:19,742 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:19,865 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:14:28,365 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:28,376 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:28,378 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:28,379 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:28,784 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:14:29,641 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:29,654 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:29,657 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:29,659 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:29,695 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:14:30,496 - core.db.Database - INFO - Updated rating for query 8 to 4
+2025-05-26 16:14:30,512 - __main__ - INFO - Rating 4 submitted for query 8
+2025-05-26 16:14:31,022 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:31,031 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:31,032 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:31,033 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:31,065 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:14:40,127 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:40,140 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:40,141 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:40,142 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:40,215 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:14:40,729 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:14:40,756 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:14:40,762 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:14:40,764 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:14:40,869 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:00,872 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:00,891 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:00,908 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:00,912 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:00,947 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:01,256 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:01,265 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:01,266 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:01,267 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:01,293 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:04,513 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:04,532 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:04,533 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:04,535 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:04,699 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:06,947 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:06,955 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:06,956 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:06,956 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:06,997 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:30,406 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:30,415 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:30,460 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:30,461 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:30,583 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:30,618 - __main__ - INFO - Successfully transcribed: An error occurred: This audio source is already inside a context manager
+2025-05-26 16:15:37,694 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:37,702 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:37,880 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:37,882 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:37,932 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:37,997 - __main__ - INFO - Successfully transcribed: An error occurred: This audio source is already inside a context manager
+2025-05-26 16:15:40,967 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:40,975 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:40,977 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:40,978 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:41,023 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:41,388 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:41,395 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:41,398 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:41,399 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:41,437 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:42,960 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:42,973 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:42,983 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:42,985 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:43,037 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:44,721 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:44,737 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:44,740 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:44,741 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:44,789 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:46,502 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:46,516 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:46,519 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:46,520 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:46,549 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:46,573 - __main__ - INFO - Successfully transcribed: An error occurred: This audio source is already inside a context manager
+2025-05-26 16:15:49,134 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:49,142 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:49,143 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:49,143 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:49,183 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:49,502 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:49,508 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:49,510 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:49,511 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:49,544 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:51,709 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:51,719 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:51,720 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:51,723 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:51,764 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:52,116 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:52,124 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:52,125 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:52,126 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:52,168 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:55,028 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:55,035 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:55,078 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:55,079 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:55,112 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:15:55,425 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:15:55,431 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:15:55,432 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:15:55,433 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:15:55,457 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:00,725 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:00,735 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:01,113 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:01,114 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:01,293 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:01,622 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:01,632 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:01,634 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:01,635 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:01,711 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:04,538 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:04,546 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:04,820 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:04,821 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:04,849 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:04,900 - __main__ - INFO - Successfully transcribed: An error occurred: This audio source is already inside a context manager
+2025-05-26 16:16:11,093 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:11,102 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:11,103 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:11,104 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:31,406 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:31,415 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:31,416 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:31,416 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:32,412 - core.db.Database - INFO - User 1 authenticated successfully
+2025-05-26 16:16:32,985 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:32,994 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:32,995 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:32,996 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:33,065 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:33,082 - core.agent.agent - INFO - Using cached mistral model
+2025-05-26 16:16:33,083 - core.agent.agent - INFO - Initialized agent with model: mistral
+2025-05-26 16:16:33,085 - __main__ - INFO - Successfully initialized mistral model
+2025-05-26 16:16:36,521 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:36,526 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:36,527 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:36,528 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:36,583 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:39,218 - core.db.Database - INFO - Database tables created/verified
+2025-05-26 16:16:39,228 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 16:16:39,229 - __main__ - INFO - Database initialized successfully
+2025-05-26 16:16:39,230 - __main__ - INFO - Successfully initialized core components
+2025-05-26 16:16:39,260 - core.db.Database - INFO - Successfully refreshed user 1
+2025-05-26 16:16:39,311 - __main__ - INFO - Successfully transcribed: An error occurred: This audio source is already inside a context manager

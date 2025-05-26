@@ -27,6 +27,7 @@ class Database:
             self.Session = scoped_session(sessionmaker(bind=self.engine))
             self.Base = declarative_base()
             self._create_tables()
+            self._create_admin_user()  # Create admin user after tables are created
             logger.info("Database initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize database: {e}")
@@ -205,16 +206,27 @@ class Database:
             int: The ID of the created query
         """
         try:
-            session = self.Session()
+            session = self.get_session()
+            
+            # Extract user_id and location from metadata
+            user_id = metadata.get('user_id') if metadata else None
+            location = metadata.get('location') if metadata else None
+            
+            # Create query object
             user_query = UserQuery(
+                user_id=user_id,
                 query=query,
                 intent=intent,
                 response=response,
+                location=location,
                 query_metadata=metadata or {},
                 timestamp=datetime.utcnow()
             )
+            
             session.add(user_query)
             session.commit()
+            session.refresh(user_query)
+            
             logger.info(f"Query added successfully: {user_query.id}")
             return user_query.id
         except Exception as e:
@@ -225,24 +237,20 @@ class Database:
             session.close()
 
     def updateRating(self, query_id: int, rating: int):
-        """
-        Update the rating for a query.
-        
-        Args:
-            query_id (int): The ID of the query to rate
-            rating (int): The rating (1-5)
-        """
+        """Update the rating for a query."""
         try:
-            session = self.Session()
-            query = session.query(UserQuery).filter_by(id=query_id).first()
+            session = self.get_session()
+            query = session.query(UserQuery).filter(UserQuery.id == query_id).first()
             if query:
                 query.rating = rating
                 session.commit()
-                logger.info(f"Rating updated for query: {query_id}")
+                logger.info(f"Updated rating for query {query_id} to {rating}")
+                return True
+            return False
         except Exception as e:
+            logger.error(f"Failed to update rating: {e}")
             session.rollback()
-            logger.error(f"Error updating rating: {e}")
-            raise
+            return False
         finally:
             session.close()
 
@@ -301,72 +309,119 @@ class Database:
             session.close()
 
     def get_analytics_data(self) -> Dict[str, Any]:
-        """
-        Get comprehensive analytics data for the dashboard.
-        
-        Returns:
-            Dict[str, Any]: Dictionary containing various analytics metrics
-        """
+        """Get comprehensive analytics data for admin dashboard."""
         try:
-            session = self.Session()
+            session = self.get_session()
             
             # User statistics
             total_users = session.query(User).count()
-            active_users = session.query(User).filter(User.last_login >= datetime.utcnow() - timedelta(days=30)).count()
+            active_users = session.query(User).filter(
+                User.last_login >= datetime.utcnow() - timedelta(days=30)
+            ).count()
+            new_users = session.query(User).filter(
+                User.created_at >= datetime.utcnow() - timedelta(days=30)
+            ).count()
             
             # Query statistics
             queries = session.query(UserQuery).all()
-            total_queries = len(queries)
             
-            # Intent distribution
+            # Initialize data structures
+            time_series = {}
+            ratings_distribution = {i: 0 for i in range(1, 6)}
+            location_data = []
             intent_distribution = {}
+            sentiment_distribution = {}
+            
+            # Process queries
             for query in queries:
+                # Time series data
+                date = query.timestamp.date().isoformat()
+                time_series[date] = time_series.get(date, 0) + 1
+                
+                # Ratings distribution
+                if query.rating:
+                    ratings_distribution[query.rating] = ratings_distribution.get(query.rating, 0) + 1
+                
+                # Intent distribution
                 if query.intent:
                     intent_distribution[query.intent] = intent_distribution.get(query.intent, 0) + 1
-            
-            # Time-based analysis
-            time_series = {}
-            for query in queries:
-                date = query.timestamp.date()
-                time_series[date] = time_series.get(date, 0) + 1
-            
-            # Location-based analysis
-            location_distribution = {}
-            for query in queries:
-                if query.location:
-                    location_distribution[query.location] = location_distribution.get(query.location, 0) + 1
-            
-            # Sentiment analysis
-            sentiment_distribution = {}
-            for query in queries:
+                
+                # Sentiment distribution
                 if query.sentiment:
                     sentiment_distribution[query.sentiment] = sentiment_distribution.get(query.sentiment, 0) + 1
+                
+                # Location data
+                if query.user and query.user.latitude and query.user.longitude:
+                    location_data.append({
+                        'latitude': query.user.latitude,
+                        'longitude': query.user.longitude,
+                        'location': query.location or 'Unknown',
+                        'query_count': 1,
+                        'avg_rating': query.rating or 0,
+                        'intent': query.intent,
+                        'sentiment': query.sentiment
+                    })
             
-            # Resolution time analysis
-            resolution_times = [q.resolution_time for q in queries if q.resolution_time]
-            avg_resolution_time = sum(resolution_times) / len(resolution_times) if resolution_times else 0
+            # Aggregate location data
+            location_aggregate = {}
+            for loc in location_data:
+                key = (loc['latitude'], loc['longitude'])
+                if key in location_aggregate:
+                    location_aggregate[key]['query_count'] += 1
+                    location_aggregate[key]['avg_rating'] = (
+                        (location_aggregate[key]['avg_rating'] * (location_aggregate[key]['query_count'] - 1) + loc['avg_rating'])
+                        / location_aggregate[key]['query_count']
+                    )
+                    # Update intent and sentiment distributions
+                    if loc['intent']:
+                        location_aggregate[key]['intents'] = location_aggregate[key].get('intents', {})
+                        location_aggregate[key]['intents'][loc['intent']] = location_aggregate[key]['intents'].get(loc['intent'], 0) + 1
+                    if loc['sentiment']:
+                        location_aggregate[key]['sentiments'] = location_aggregate[key].get('sentiments', {})
+                        location_aggregate[key]['sentiments'][loc['sentiment']] = location_aggregate[key]['sentiments'].get(loc['sentiment'], 0) + 1
+                else:
+                    location_aggregate[key] = {
+                        'latitude': loc['latitude'],
+                        'longitude': loc['longitude'],
+                        'location': loc['location'],
+                        'query_count': 1,
+                        'avg_rating': loc['avg_rating'],
+                        'intents': {loc['intent']: 1} if loc['intent'] else {},
+                        'sentiments': {loc['sentiment']: 1} if loc['sentiment'] else {}
+                    }
             
             return {
                 'user_stats': {
                     'total_users': total_users,
                     'active_users': active_users,
-                    'new_users_30d': session.query(User).filter(
-                        User.created_at >= datetime.utcnow() - timedelta(days=30)
-                    ).count()
+                    'new_users_30d': new_users,
+                    'growth_rate': (new_users / total_users * 100) if total_users > 0 else 0
                 },
                 'query_stats': {
-                    'total_queries': total_queries,
-                    'avg_queries_per_user': total_queries / total_users if total_users > 0 else 0,
-                    'intent_distribution': intent_distribution,
                     'time_series': time_series,
-                    'location_distribution': location_distribution,
+                    'ratings_distribution': ratings_distribution,
+                    'intent_distribution': intent_distribution,
                     'sentiment_distribution': sentiment_distribution,
-                    'avg_resolution_time': avg_resolution_time
+                    'location_data': list(location_aggregate.values())
                 }
             }
         except Exception as e:
-            logger.error(f"Error getting analytics data: {e}")
-            return {}
+            logger.error(f"Failed to get analytics data: {e}")
+            return {
+                'user_stats': {
+                    'total_users': 0,
+                    'active_users': 0,
+                    'new_users_30d': 0,
+                    'growth_rate': 0
+                },
+                'query_stats': {
+                    'time_series': {},
+                    'ratings_distribution': {i: 0 for i in range(1, 6)},
+                    'intent_distribution': {},
+                    'sentiment_distribution': {},
+                    'location_data': []
+                }
+            }
         finally:
             session.close()
 
@@ -428,56 +483,70 @@ class Database:
             session.close()
 
     def get_user_analytics(self, user_id: int) -> Dict[str, Any]:
-        """
-        Get analytics data for a specific user.
-        
-        Args:
-            user_id (int): The user's ID
-            
-        Returns:
-            Dict[str, Any]: User-specific analytics
-        """
+        """Get analytics data for a specific user."""
         try:
-            session = self.Session()
-            user = session.query(User).filter_by(id=user_id).first()
+            session = self.get_session()
+            user = session.query(User).filter(User.id == user_id).first()
             if not user:
                 return {}
             
-            queries = session.query(UserQuery).filter_by(user_id=user_id).all()
+            # Get user's queries
+            queries = session.query(UserQuery).filter(UserQuery.user_id == user_id).all()
             
-            # Get regional stats for user's queries
-            regional_stats = {}
+            # Calculate statistics
+            total_queries = len(queries)
+            ratings = [q.rating for q in queries if q.rating]
+            avg_rating = sum(ratings) / len(ratings) if ratings else 0
+            
+            # Initialize distributions
+            intent_distribution = {}
+            sentiment_distribution = {}
+            ratings_distribution = {i: 0 for i in range(1, 6)}
+            time_series = {}
+            
+            # Process queries
             for query in queries:
-                if query.intent and query.location:
-                    key = f"{query.intent}_{query.location}"
-                    if key not in regional_stats:
-                        regional_stats[key] = self.get_regional_stats(query.intent, query.location)
+                # Intent distribution
+                if query.intent:
+                    intent_distribution[query.intent] = intent_distribution.get(query.intent, 0) + 1
+                
+                # Sentiment distribution
+                if query.sentiment:
+                    sentiment_distribution[query.sentiment] = sentiment_distribution.get(query.sentiment, 0) + 1
+                
+                # Ratings distribution
+                if query.rating:
+                    ratings_distribution[query.rating] = ratings_distribution.get(query.rating, 0) + 1
+                
+                # Time series
+                date = query.timestamp.date().isoformat()
+                time_series[date] = time_series.get(date, 0) + 1
+            
+            # Calculate resolution time statistics
+            resolution_times = [q.resolution_time for q in queries if q.resolution_time]
+            avg_resolution_time = sum(resolution_times) / len(resolution_times) if resolution_times else 0
             
             return {
                 'user_info': {
                     'name': user.name,
                     'email': user.email,
-                    'phone': user.phone,
-                    'account_number': user.account_number,
                     'last_login': user.last_login,
-                    'login_count': user.login_count
+                    'login_count': user.login_count,
+                    'account_number': user.account_number,
+                    'created_at': user.created_at
                 },
                 'query_stats': {
-                    'total_queries': len(queries),
-                    'intent_distribution': {
-                        intent: len([q for q in queries if q.intent == intent])
-                        for intent in set(q.intent for q in queries if q.intent)
-                    },
-                    'sentiment_distribution': {
-                        sentiment: len([q for q in queries if q.sentiment == sentiment])
-                        for sentiment in set(q.sentiment for q in queries if q.sentiment)
-                    },
-                    'avg_rating': sum(q.rating or 0 for q in queries) / len(queries) if queries else 0
-                },
-                'regional_stats': regional_stats
+                    'total_queries': total_queries,
+                    'avg_rating': avg_rating,
+                    'avg_resolution_time': avg_resolution_time,
+                    'intent_distribution': intent_distribution,
+                    'sentiment_distribution': sentiment_distribution,
+                    'ratings_distribution': ratings_distribution,
+                    'time_series': time_series
+                }
             }
         except Exception as e:
-            logger.error(f"Error getting user analytics: {e}")
+            logger.error(f"Failed to get user analytics: {e}")
             return {}
         finally:
             session.close()

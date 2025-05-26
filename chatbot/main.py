@@ -197,23 +197,9 @@ st.markdown("""
     }
 
     /* Chat Interface */
-    .chat-container {
-        padding: 20px;
-        background-color: var(--background-color);
-        min-height: 100vh;
-        color: var(--text-color);
-    }
     .chat-header {
         text-align: center;
         margin-bottom: 30px;
-    }
-    .chat-history {
-        height: 500px;
-        overflow-y: auto;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        margin-bottom: 20px;
     }
     .chat-message {
         padding: 15px;
@@ -276,6 +262,17 @@ def show_dashboard():
             # Admin dashboard
             analytics = db.get_analytics_data()
             
+            # Admin controls
+            st.markdown("### 👑 Admin Controls")
+            admin_col1, admin_col2 = st.columns(2)
+            with admin_col1:
+                if st.button("🔄 Refresh Analytics", use_container_width=True):
+                    st.rerun()
+            with admin_col2:
+                if st.button("📊 Export Data", use_container_width=True):
+                    # Export functionality can be added here
+                    st.info("Export functionality coming soon!")
+
             # Date range selector
             col1, col2 = st.columns([3, 1])
             with col1:
@@ -288,42 +285,45 @@ def show_dashboard():
                 if st.button("🔄 Refresh", use_container_width=True):
                     st.rerun()
 
-            # User Statistics
+            # User Statistics in 2x2 format
             st.markdown('<div class="metric-section">', unsafe_allow_html=True)
             st.subheader("👥 User Statistics")
             
-            col1, col2, col3, col4 = st.columns(4)
+            # Create 2x2 grid for metrics
+            col1, col2 = st.columns(2)
             with col1:
                 st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{}</div>
-                        <div class="metric-label">Total Users</div>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Total Users</strong></div>
+                            <div class="metric-value">{}</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Active Users (30d)</strong></div>
+                            <div class="metric-value">{}</div>
+                        </div>
                     </div>
-                """.format(analytics['user_stats']['total_users']), unsafe_allow_html=True)
+                """.format(
+                    analytics['user_stats']['total_users'],
+                    analytics['user_stats']['active_users']
+                ), unsafe_allow_html=True)
             
             with col2:
                 st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{}</div>
-                        <div class="metric-label">Active Users (30d)</div>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>New Users (30d)</strong></div>
+                            <div class="metric-value">{}</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Growth Rate</strong></div>
+                            <div class="metric-value">{:.1f}%</div>
+                        </div>
                     </div>
-                """.format(analytics['user_stats']['active_users']), unsafe_allow_html=True)
-            
-            with col3:
-                st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{}</div>
-                        <div class="metric-label">New Users (30d)</div>
-                    </div>
-                """.format(analytics['user_stats']['new_users_30d']), unsafe_allow_html=True)
-            
-            with col4:
-                st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{:.1f}%</div>
-                        <div class="metric-label">Growth Rate</div>
-                    </div>
-                """.format(analytics['user_stats'].get('growth_rate', 0)), unsafe_allow_html=True)
+                """.format(
+                    analytics['user_stats']['new_users_30d'],
+                    analytics['user_stats'].get('growth_rate', 0)
+                ), unsafe_allow_html=True)
             
             st.markdown('</div>', unsafe_allow_html=True)
 
@@ -334,9 +334,7 @@ def show_dashboard():
             col1, col2 = st.columns(2)
             
             with col1:
-                st.markdown('<div class="chart-card">', unsafe_allow_html=True)
-                st.subheader("Query Volume Over Time")
-                
+                # Query Volume Over Time
                 time_series = pd.DataFrame(
                     list(analytics['query_stats']['time_series'].items()),
                     columns=['date', 'count']
@@ -354,71 +352,147 @@ def show_dashboard():
                     showlegend=False
                 )
                 st.plotly_chart(fig, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
 
             with col2:
-                st.markdown('<div class="chart-card">', unsafe_allow_html=True)
-                st.subheader("Location Distribution")
-                
-                location_data = pd.DataFrame(
-                    list(analytics['query_stats']['location_distribution'].items()),
-                    columns=['location', 'count']
+                # Average Ratings
+                ratings_data = pd.DataFrame(
+                    list(analytics['query_stats']['ratings_distribution'].items()),
+                    columns=['rating', 'count']
                 )
                 fig = px.bar(
-                    location_data,
-                    x='location',
+                    ratings_data,
+                    x='rating',
                     y='count',
-                    title="Queries by Location",
+                    title="Query Ratings Distribution",
                     template="plotly_white"
                 )
                 fig.update_layout(
-                    xaxis_title="Location",
+                    xaxis_title="Rating",
                     yaxis_title="Number of Queries",
                     showlegend=False
                 )
                 st.plotly_chart(fig, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
 
-            st.markdown('</div>', unsafe_allow_html=True)
+            # Intent and Sentiment Analysis
+            st.subheader("🎯 Intent & Sentiment Analysis")
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                # Intent Distribution
+                intent_data = pd.DataFrame(
+                    list(analytics['query_stats']['intent_distribution'].items()),
+                    columns=['intent', 'count']
+                )
+                fig = px.pie(
+                    intent_data,
+                    values='count',
+                    names='intent',
+                    title="Query Intent Distribution",
+                    template="plotly_white"
+                )
+                fig.update_traces(textposition='inside', textinfo='percent+label')
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col2:
+                # Sentiment Distribution
+                sentiment_data = pd.DataFrame(
+                    list(analytics['query_stats']['sentiment_distribution'].items()),
+                    columns=['sentiment', 'count']
+                )
+                fig = px.pie(
+                    sentiment_data,
+                    values='count',
+                    names='sentiment',
+                    title="Query Sentiment Distribution",
+                    template="plotly_white"
+                )
+                fig.update_traces(textposition='inside', textinfo='percent+label')
+                st.plotly_chart(fig, use_container_width=True)
+
+            # Geolocation Map
+            st.subheader("🗺️ Query Distribution Map")
+            try:
+                # Create a map with query locations
+                map_data = pd.DataFrame(analytics['query_stats']['location_data'])
+                fig = px.scatter_mapbox(
+                    map_data,
+                    lat='latitude',
+                    lon='longitude',
+                    hover_name='location',
+                    hover_data=['query_count', 'avg_rating', 'intents', 'sentiments'],
+                    zoom=2,
+                    title="Query Distribution by Location",
+                    mapbox_style="carto-positron"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+            except Exception as e:
+                logger.error(f"Failed to create geolocation map: {e}")
+                st.warning("Could not display geolocation map")
+
+            # Recent Activity
+            st.subheader("📝 Recent Activity")
+            try:
+                session = db.get_session()
+                recent_queries = session.query(UserQuery).order_by(UserQuery.timestamp.desc()).limit(10).all()
+                for query in recent_queries:
+                    with st.expander(f"Query from {query.timestamp.strftime('%Y-%m-%d %H:%M')}"):
+                        st.markdown(f"**User:** {query.user.name if query.user else 'Unknown'}")
+                        st.markdown(f"**Question:** {query.query}")
+                        st.markdown(f"**Intent:** {query.intent}")
+                        st.markdown(f"**Response:** {query.response}")
+                        if query.rating:
+                            st.markdown(f"**Rating:** {'⭐' * query.rating}")
+                        if query.sentiment:
+                            st.markdown(f"**Sentiment:** {query.sentiment}")
+                        if query.location:
+                            st.markdown(f"**Location:** {query.location}")
+            except Exception as e:
+                logger.error(f"Failed to load recent activity: {e}")
+                st.warning("Could not load recent activity")
 
         else:
             # User dashboard
             analytics = db.get_user_analytics(st.session_state.user.id)
             
-            # User Info
+            # User Info in 2x2 format
             st.markdown('<div class="user-info-section">', unsafe_allow_html=True)
-            st.subheader("👤 Your Profile")
+            st.subheader("👤 Your Activity")
             
+            # Create 2x2 grid for user metrics
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{}</div>
-                        <div class="metric-label">Total Queries</div>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Total Queries</strong></div>
+                            <div class="metric-value">{}</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Average Rating</strong></div>
+                            <div class="metric-value">{:.1f} ⭐</div>
+                        </div>
                     </div>
-                """.format(analytics['query_stats']['total_queries']), unsafe_allow_html=True)
-                
-                st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{:.1f} ⭐</div>
-                        <div class="metric-label">Average Rating</div>
-                    </div>
-                """.format(analytics['query_stats']['avg_rating']), unsafe_allow_html=True)
+                """.format(
+                    analytics['query_stats']['total_queries'],
+                    analytics['query_stats']['avg_rating']
+                ), unsafe_allow_html=True)
             
             with col2:
                 st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{}</div>
-                        <div class="metric-label">Login Count</div>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Last Login</strong></div>
+                            <div class="metric-value">{}</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-title"><strong>Account Number</strong></div>
+                            <div class="metric-value">{}</div>
+                        </div>
                     </div>
-                """.format(analytics['user_info']['login_count']), unsafe_allow_html=True)
-                
-                st.markdown("""
-                    <div class="metric-card">
-                        <div class="metric-value">{}</div>
-                        <div class="metric-label">Last Login</div>
-                    </div>
-                """.format(analytics['user_info']['last_login'].strftime('%Y-%m-%d %H:%M') if analytics['user_info']['last_login'] else 'N/A'), unsafe_allow_html=True)
+                """.format(
+                    analytics['user_info']['last_login'].strftime('%Y-%m-%d %H:%M') if analytics['user_info']['last_login'] else 'N/A',
+                    analytics['user_info']['account_number']
+                ), unsafe_allow_html=True)
             
             st.markdown('</div>', unsafe_allow_html=True)
 
@@ -429,9 +503,7 @@ def show_dashboard():
             col1, col2 = st.columns(2)
             
             with col1:
-                st.markdown('<div class="chart-card">', unsafe_allow_html=True)
-                st.subheader("Intent Distribution")
-                
+                # Query Intent Distribution
                 intent_data = pd.DataFrame(
                     list(analytics['query_stats']['intent_distribution'].items()),
                     columns=['intent', 'count']
@@ -445,33 +517,29 @@ def show_dashboard():
                 )
                 fig.update_traces(textposition='inside', textinfo='percent+label')
                 st.plotly_chart(fig, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
 
             with col2:
-                st.markdown('<div class="chart-card">', unsafe_allow_html=True)
-                st.subheader("Sentiment Analysis")
-                
-                sentiment_data = pd.DataFrame(
-                    list(analytics['query_stats']['sentiment_distribution'].items()),
-                    columns=['sentiment', 'count']
+                # Rating Distribution
+                ratings_data = pd.DataFrame(
+                    list(analytics['query_stats']['ratings_distribution'].items()),
+                    columns=['rating', 'count']
                 )
-                fig = px.pie(
-                    sentiment_data,
-                    values='count',
-                    names='sentiment',
-                    title="Your Query Sentiment",
+                fig = px.bar(
+                    ratings_data,
+                    x='rating',
+                    y='count',
+                    title="Your Query Ratings",
                     template="plotly_white"
                 )
-                fig.update_traces(textposition='inside', textinfo='percent+label')
+                fig.update_layout(
+                    xaxis_title="Rating",
+                    yaxis_title="Number of Queries",
+                    showlegend=False
+                )
                 st.plotly_chart(fig, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
-
-            st.markdown('</div>', unsafe_allow_html=True)
 
             # Recent Queries
-            st.markdown('<div class="recent-queries-section">', unsafe_allow_html=True)
             st.subheader("📝 Recent Queries")
-            
             queries = db.get_user_queries(st.session_state.user.id)
             if queries:
                 for query in sorted(queries, key=lambda x: x['timestamp'], reverse=True)[:5]:
@@ -485,12 +553,8 @@ def show_dashboard():
                             st.markdown(f"**Sentiment:** {query['sentiment']}")
                         if query['resolution_time']:
                             st.markdown(f"**Resolution Time:** {query['resolution_time']:.2f}s")
-                        if query['follow_up_required']:
-                            st.markdown("**Follow-up Required:** Yes")
             else:
                 st.info("No recent queries found.")
-            
-            st.markdown('</div>', unsafe_allow_html=True)
 
     except Exception as e:
         logger.error(f"Dashboard error: {e}")
@@ -746,6 +810,19 @@ def show_chat_interface():
             height: 38px;
             padding: 0 15px;
         }
+        .rating-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .rating-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
         </style>
     """, unsafe_allow_html=True)
 
@@ -906,6 +983,24 @@ def show_chat_interface():
                 st.rerun()
 
     st.markdown('</div></div>', unsafe_allow_html=True)
+
+    # Rating prompt - shown after chat container is loaded
+    if st.session_state.chat_history and st.session_state.query_id:
+        st.markdown('<div class="rating-container">', unsafe_allow_html=True)
+        st.markdown('<div class="rating-title">How would you rate this response?</div>', unsafe_allow_html=True)
+        rating = st.slider("Rating", 1, 5, 3, key=f"rating_{st.session_state.query_id}")
+        if st.button("Submit Rating", key=f"submit_rating_{st.session_state.query_id}"):
+            try:
+                db.updateRating(st.session_state.query_id, rating)
+                st.success("Thank you for your feedback!")
+                logger.info(f"Rating {rating} submitted for query {st.session_state.query_id}")
+                # Clear the query_id after rating is submitted
+                st.session_state.query_id = None
+                st.rerun()
+            except Exception as e:
+                logger.error(f"Failed to update rating: {e}")
+                st.error("Failed to save rating. Please try again.")
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def show_auth_interface():
     """Show the authentication interface."""
