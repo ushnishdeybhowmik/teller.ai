@@ -6,91 +6,123 @@ import logging
 from enum import Enum
 import json
 import re
+from datetime import datetime
 from core.llm.mistral.mistral import Mistral
 from core.llm.tinyllama.tinyllama import TinyLlama
 from core.llm.gpt.gpt import GPT
+from typing import Tuple, Optional
+import time
+
+logger = logging.getLogger(__name__)
 
 class LLM(Enum):
-    MISTRAL = 1
-    TINYLLAMA = 2
-    CHATGPT = 3
+    MISTRAL = "mistral"
+    GPT = "gpt"
+    TINYLLAMA = "tinyllama"
+
+    @classmethod
+    def from_name(cls, name: str) -> 'LLM':
+        """Get LLM enum value from name (case-insensitive)."""
+        try:
+            return next(llm for llm in cls if llm.value.lower() == name.lower())
+        except StopIteration:
+            logger.warning(f"Unknown LLM name: {name}, defaulting to MISTRAL")
+            return cls.MISTRAL
+
+    @classmethod
+    def get_values(cls) -> list[str]:
+        """Get list of all LLM values."""
+        return [llm.value for llm in cls]
+
+    @classmethod
+    def get_index(cls, llm: 'LLM') -> int:
+        """Get index of LLM in the list of values."""
+        return list(cls).index(llm)
 
 class Agent:
     def __init__(self, model: LLM = LLM.MISTRAL):
-        self.allowed_intents = [
-            "LOGIN_ISSUE",
-            "PASSWORD_RESET",
-            "ACCOUNT_LOCKED",
-            "CUSTOMER_SUPPORT",
-            "UNAUTHORIZED_ACTIVITY",
-            "CARD_BLOCKED",
-            "APP_CRASH",
-            "TWO_FA_PROBLEM",
-            "ACCOUNT_NOT_FOUND",
-            "UNKNOWN"
-        ]
+        """Initialize the agent with specified model."""
+        self.model = model
+        self._initialize_model()
+        logger.info(f"Initialized agent with model: {model.value}")
 
-        if model.name == LLM.MISTRAL.name:
-            self.__llm = Mistral()
-            self.agent = "MISTRAL"
-        elif model.name == LLM.TINYLLAMA.name:
-            self.__llm = TinyLlama()
-            self.agent = "TINYLLAMA"
-        elif model.name == LLM.CHATGPT.name:
-            self.__llm = GPT()
-            self.agent = "GPT"
-
-    def speak(self, text):
+    def _initialize_model(self):
+        """Initialize the selected model."""
         try:
-            tts = gTTS(text)
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
-                path = fp.name
-                tts.save(path)
-            playsound.playsound(path)
-            os.remove(path)
-        except Exception as e:
-            logging.warning(f"TTS playback failed: {e}")
-            raise RuntimeError("TTS playback failed")
-
-    def get_intent_and_response(self, query):
-        prompt = f"""
-You are a smart banking assistant. Return ONLY a single JSON object for the most relevant problem-based customer support intent from this list:
-
-{', '.join(self.allowed_intents[:-1])}
-
-Rules:
-- Only one intent should be returned.
-- Do NOT include intents that involve transactions or bank approvals.
-- Give a generic response that does not elicit ANY FURTHER ACTION FROM USER
-- If the query doesn't match any of the allowed intents, return:
-  {{
-    "intent": "UNKNOWN",
-    "response": "Unable to help with this at the moment."
-  }}
-- You must respond ONLY with the JSON object and nothing else.
-User query: "{query}"
-""".strip()
-
-        try:
-            res = self.__llm(prompt)
-            if not self.agent == "GPT":
-                output = res["choices"][0]["text"].strip()
+            if self.model == LLM.MISTRAL:
+                self.agent = Mistral()
+            elif self.model == LLM.GPT:
+                self.agent = GPT()
+            elif self.model == LLM.TINYLLAMA:
+                self.agent = TinyLlama()
             else:
-                output = res
-            print("=== LLM Raw Output ===\n", output)
+                raise ValueError(f"Unsupported model: {self.model}")
+            logger.info(f"Successfully initialized {self.model.value} model")
+        except Exception as e:
+            logger.error(f"Failed to initialize {self.model.value} model: {e}")
+            # Fallback to Mistral if initialization fails
+            if self.model != LLM.MISTRAL:
+                logger.info("Falling back to Mistral model")
+                self.model = LLM.MISTRAL
+                self.agent = Mistral()
 
-            # Extract only the first valid JSON block
-            match = re.search(r'(\{\n\s\s\"intent\"\:\s\"(?:LOGIN_ISSUE|PASSWORD_RESET|ACCOUNT_LOCKED|CUSTOMER_SUPPORT|UNAUTHORIZED_ACTIVITY|CARD_BLOCKED|APP_CRASH|TWO_FA_PROBLEM|ACCOUNT_NOT_FOUND|UNKNOWN)\"\,\n\s\s\"response\"\:\s\".+\"\n\})', output)
-            intent = "UNKNOWN"
-            response = "Unable to help with this at the moment."
+    def speak(self, text: str) -> bool:
+        """
+        Convert text to speech and play it.
+        
+        Args:
+            text (str): Text to convert to speech
             
-            if match:
-                result = json.loads(match.group(1))
-                intent = result.get("intent", "UNKNOWN")
-                response = result.get("response", "Unable to help with this at the moment.")
-                
-            return intent, response
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        try:
+            # Create a temporary file with a unique name
+            with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as temp_file:
+                temp_filename = temp_file.name
+
+            # Generate speech
+            tts = gTTS(text=text, lang='en', slow=False)
+            tts.save(temp_filename)
+
+            # Play the audio
+            playsound(temp_filename)
+
+            # Clean up
+            try:
+                os.unlink(temp_filename)
+            except Exception as e:
+                logger.warning(f"Failed to delete temporary file {temp_filename}: {e}")
+
+            return True
 
         except Exception as e:
-            print(f"[agent.py error]: {e}")
-            return "UNKNOWN", "Unable to help with this at the moment."
+            logger.error(f"TTS playback failed: {e}")
+            return False
+
+    def analyze_sentiment(self, text: str) -> str:
+        """Analyze the sentiment of the response."""
+        try:
+            return self.agent.analyze_sentiment(text)
+        except Exception as e:
+            logger.error(f"Sentiment analysis failed: {e}")
+            return "NEUTRAL"
+
+    def get_intent_and_response(self, query: str) -> Tuple[str, str]:
+        """
+        Get intent and response for a query.
+        
+        Args:
+            query (str): User's query
+            
+        Returns:
+            Tuple[str, str]: (intent, response)
+        """
+        try:
+            return self.agent.get_intent_and_response(query)
+        except Exception as e:
+            logger.error(f"Error getting intent and response: {e}")
+            return "error", "I apologize, but I'm having trouble processing your request. Please try again."
+
+    def __str__(self):
+        return f"Agent using {self.agent}"

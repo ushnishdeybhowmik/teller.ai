@@ -1,0 +1,159 @@
+2025-05-26 09:07:40,966 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:07:42,401 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:07:54,853 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:07:55,513 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:11:47,322 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:11:48,060 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:12:26,022 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:12:26,871 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:12:26,893 - __main__ - ERROR - Authentication error: name 'validate_name' is not defined
+2025-05-26 09:16:21,170 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:16:21,680 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:16:42,248 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:16:42,749 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:17:21,267 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:17:21,880 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:17:38,485 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:17:39,037 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:17:39,168 - core.db.Database - ERROR - Error getting user by phone: (sqlite3.OperationalError) no such column: users.email
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.phone AS users_phone, users.email AS users_email, users.password AS users_password, users.account_number AS users_account_number, users.latitude AS users_latitude, users.longitude AS users_longitude, users.created_at AS users_created_at, users.last_login AS users_last_login 
+FROM users 
+WHERE users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9373314503', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-26 09:17:39,444 - core.db.Database - ERROR - Error adding user: (sqlite3.OperationalError) no such column: users.email
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.phone AS users_phone, users.email AS users_email, users.password AS users_password, users.account_number AS users_account_number, users.latitude AS users_latitude, users.longitude AS users_longitude, users.created_at AS users_created_at, users.last_login AS users_last_login 
+FROM users 
+WHERE users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9373314503', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-26 09:17:39,446 - __main__ - ERROR - Authentication error: (sqlite3.OperationalError) no such column: users.email
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.phone AS users_phone, users.email AS users_email, users.password AS users_password, users.account_number AS users_account_number, users.latitude AS users_latitude, users.longitude AS users_longitude, users.created_at AS users_created_at, users.last_login AS users_last_login 
+FROM users 
+WHERE users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9373314503', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-26 09:17:42,337 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:17:42,823 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:17:42,836 - core.db.Database - ERROR - Error getting user by phone: (sqlite3.OperationalError) no such column: users.email
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.phone AS users_phone, users.email AS users_email, users.password AS users_password, users.account_number AS users_account_number, users.latitude AS users_latitude, users.longitude AS users_longitude, users.created_at AS users_created_at, users.last_login AS users_last_login 
+FROM users 
+WHERE users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9373314503', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-26 09:17:43,095 - core.db.Database - ERROR - Error adding user: (sqlite3.OperationalError) no such column: users.email
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.phone AS users_phone, users.email AS users_email, users.password AS users_password, users.account_number AS users_account_number, users.latitude AS users_latitude, users.longitude AS users_longitude, users.created_at AS users_created_at, users.last_login AS users_last_login 
+FROM users 
+WHERE users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9373314503', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-26 09:17:43,096 - __main__ - ERROR - Authentication error: (sqlite3.OperationalError) no such column: users.email
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.phone AS users_phone, users.email AS users_email, users.password AS users_password, users.account_number AS users_account_number, users.latitude AS users_latitude, users.longitude AS users_longitude, users.created_at AS users_created_at, users.last_login AS users_last_login 
+FROM users 
+WHERE users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('9373314503', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-26 09:20:02,752 - core.db.Database - INFO - Updated database schema to include email column
+2025-05-26 09:20:02,753 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:20:03,294 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:20:20,100 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:20:20,580 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:21:11,215 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:21:11,682 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:21:12,734 - core.db.Database - INFO - User created successfully: 3956268261
+2025-05-26 09:21:12,903 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:21:13,396 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:24:20,260 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:24:20,910 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:26:01,486 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:26:02,136 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:26:26,502 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:26:27,014 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:27:19,615 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:27:20,141 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:44:22,015 - core.db.Database - INFO - Created new database tables
+2025-05-26 09:44:22,016 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:44:22,617 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:44:29,186 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:44:29,685 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:44:33,458 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:44:33,912 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:03,727 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:04,266 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:04,280 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 09:45:15,998 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:16,455 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:16,466 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 09:45:16,949 - core.db.Database - INFO - User created successfully: 0853662015
+2025-05-26 09:45:17,078 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:17,533 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:36,581 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:37,076 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:37,198 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:37,640 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:41,571 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:42,075 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:42,207 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:42,648 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:44,825 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:45,278 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:45:45,401 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:45:45,895 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:46:03,308 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:46:03,783 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:46:03,906 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:46:04,351 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:46:16,064 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:46:16,500 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:46:16,607 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:46:17,054 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:46:46,906 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:46:47,438 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:46:47,617 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:46:48,155 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:53:35,127 - core.db.Database - ERROR - Failed to initialize database: cannot access local variable 'session' where it is not associated with a value
+2025-05-26 09:53:35,128 - __main__ - ERROR - Failed to initialize core components: cannot access local variable 'session' where it is not associated with a value
+2025-05-26 09:53:56,071 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:53:56,857 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:54:03,932 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:54:04,388 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:58:14,374 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:58:14,872 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:58:23,176 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:58:23,750 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 09:59:54,510 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 09:59:55,043 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:00:16,531 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:00:16,985 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:01:16,908 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:01:17,423 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:01:25,921 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:01:26,543 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:01:43,288 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:01:43,820 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:01:43,853 - __main__ - ERROR - Failed to get location: 'Geolocation' object has no attribute 'get_location_name'
+2025-05-26 10:01:44,350 - core.db.Database - INFO - User created successfully: 3028084543
+2025-05-26 10:01:44,449 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:01:44,927 - geocoder.base - INFO - Requested http://ipinfo.io/json
+2025-05-26 10:01:46,643 - playsound - ERROR - 
+    Error 305 for command:
+        open "C:\Users\neilb\AppData\Local\Temp\tmpzlbe_viw.mp3"
+    Cannot specify extra characters after a string enclosed in quotation marks.
+2025-05-26 10:01:46,644 - playsound - ERROR - 
+    Error 263 for command:
+        close "C:\Users\neilb\AppData\Local\Temp\tmpzlbe_viw.mp3"
+    The specified device is not open or is not recognized by MCI.
+2025-05-26 10:01:46,645 - playsound - WARNING - Failed to close the file: "C:\Users\neilb\AppData\Local\Temp\tmpzlbe_viw.mp3"
+2025-05-26 10:01:46,645 - root - WARNING - TTS playback failed: 
+    Error 305 for command:
+        open "C:\Users\neilb\AppData\Local\Temp\tmpzlbe_viw.mp3"
+    Cannot specify extra characters after a string enclosed in quotation marks.
+2025-05-26 10:01:46,645 - __main__ - ERROR - Failed to play welcome message: TTS playback failed
+2025-05-26 10:03:26,916 - core.db.Database - INFO - Database initialized successfully
+2025-05-26 10:03:27,615 - geocoder.base - INFO - Requested http://ipinfo.io/json
